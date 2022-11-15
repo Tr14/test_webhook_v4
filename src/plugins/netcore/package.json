@@ -1,0 +1,9 @@
+{
+  "name": "strapi-plugin-netcore",
+  "strapi": {
+    "name": "Netcore",
+    "icon": "comment-dots",
+    "description": "netcore.plugin.description"
+  },
+  "version": "1.0.0"
+}

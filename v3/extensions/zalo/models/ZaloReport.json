@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ZaloReport",
+  "info": {
+    "name": "Zalo report",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "message_id": {
+      "type": "string"
+    },
+    "seen": {
+      "type": "boolean",
+      "default": false
+    },
+    "zalo_oa": {
+      "plugin": "zalo",
+      "model": "zalooa"
+    },
+    "zalo_follower": {
+      "plugin": "zalo",
+      "model": "zalofollower"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    }
+  }
+}

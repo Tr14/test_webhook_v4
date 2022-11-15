@@ -1,0 +1,20 @@
+{
+  "homepage.title": "Zalo",
+  "homepage.description": "Zalo program campaign",
+  "homepage.create": "Create new",
+
+  "editpage.description": "Drag link to navigation area to create",
+  "editpage.add": "Add category",
+  "editpage.save": "Save & Apply",
+  "editpage.category.title": "Create new category",
+  "editpage.category.name": "Category name:",
+  "editpage.category.cancel": "Cancel",
+  "editpage.category.add": "Add",
+
+  "editpage.rename.title": "Edit your category name:",
+  "editpage.rename.name": "Category name:",
+  "editpage.rename.cancel": "Cancel",
+  "editpage.rename.save": "Save",
+  "editpage.rename.saving": "Saving"
+
+}

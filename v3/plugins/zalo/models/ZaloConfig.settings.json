@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ZaloConfig",
+  "info": {
+    "name": "Zalo configuration"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "InstanceId": {
+      "type": "string"
+    },
+    "NodeName": {
+      "type": "string"
+    },
+    "Message": {
+      "type": "string"
+    }
+  }
+}

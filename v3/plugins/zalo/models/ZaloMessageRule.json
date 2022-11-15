@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ZaloMessageRule",
+  "info": {
+    "name": "Zalo message rule",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "zalo_oa": {
+      "plugin": "zalo",
+      "model": "zalooa"
+    },
+    "rule": {
+      "type": "string"
+    },
+    "field": {
+      "type": "string"
+    },
+    "activity": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    }
+  }
+}

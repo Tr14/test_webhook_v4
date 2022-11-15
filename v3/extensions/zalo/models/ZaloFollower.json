@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ZaloFollower",
+  "info": {
+    "name": "Zalo followers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "avatar": {
+      "type": "string"
+    },
+    "user_gender": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string"
+    },
+    "user_id_by_app": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "email_address": {
+      "type": "email"
+    },
+    "mobile_number": {
+      "type": "string"
+    },
+    "zalo_oa": {
+      "plugin": "zalo",
+      "model": "zalooa"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "follow",
+        "unfollow"
+      ]
+    },
+    "followed_at": {
+      "type": "datetime"
+    },
+    "unfollowed_at": {
+      "type": "datetime"
+    },
+    "birth_date": {
+      "type": "date"
+    }
+  }
+}

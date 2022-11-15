@@ -1,0 +1,48 @@
+{
+    "kind": "collectionType",
+    "collectionName": "FacebookLeads",
+    "info": {
+        "singularName": "FacebookLeads",
+        "pluralName": "FacebookLeads",
+        "name": "Facebook Leads"
+    },
+    "options": {
+        "draftAndPublish": false,
+        "comment": ""
+    },
+    "pluginOptions": {
+        "content-manager": {
+            "visible": true
+        },
+        "content-type-builder": {
+            "visible": true
+        }
+    },
+    "attributes": {
+        "Email": {
+            "type": "string",
+            "required": true,
+            "maxLentgh": 100
+        },
+        "Full_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Form_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Page_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Source": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "isGet": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

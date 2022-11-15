@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "FBMessageTemplate",
+  "info": {
+    "name": "Facebook message template",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "message": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "image": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
