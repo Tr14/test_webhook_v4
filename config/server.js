@@ -11,4 +11,7 @@ module.exports = ({ env }) => ({
     host: '127.0.0.1',
     password: '!Vola@2021@'
   },
+  app: {
+    keys: env.array('APP_KEYS'),
+  }
 });
