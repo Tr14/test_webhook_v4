@@ -57,7 +57,7 @@ const axios = require('axios');
 
 module.exports = {
   async send(ctx) {
-
+    ctx.body = "Lmao ez"
   },
 
   async customApi(ctx) {
