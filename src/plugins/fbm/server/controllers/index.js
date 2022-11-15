@@ -1,7 +1,7 @@
 'use strict';
 
-const facebook = require('./FBM');
+const FBM = require('./FBM');
 
 module.exports = {
-  facebook,
+  FBM,
 };
