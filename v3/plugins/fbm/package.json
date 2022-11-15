@@ -1,9 +1,0 @@
-{
-  "name": "strapi-plugin-fbm",
-  "strapi": {
-    "name": "Facebook Messenger",
-    "icon": "comment-dots",
-    "description": "fbm.plugin.description"
-  },
-  "version": "1.0.0"
-}
