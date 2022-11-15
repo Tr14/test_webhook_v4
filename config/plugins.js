@@ -1,4 +1,4 @@
-module.exports = ({ env }) => ({
+module.exports = {
     'zalo': {
         messageRules: ['#', "*", "?"],
         url: "https://openapi.zalo.me/v2.0/oa",
@@ -15,4 +15,4 @@ module.exports = ({ env }) => ({
         enabled: true,
         resolve: '.src/plugins/netcore'
     }
-});
+}
