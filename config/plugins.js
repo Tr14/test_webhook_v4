@@ -14,5 +14,10 @@ module.exports = {
     'netcore': {
         enabled: true,
         resolve: './src/plugins/netcore'
+    },
+
+    'todo': {
+        enabled: true,
+        resolve: './src/plugins/todo'
     }
 }
