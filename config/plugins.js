@@ -1,10 +1,10 @@
 module.exports = {
-    /*
     'zalo': {
+        enabled: true,
+        resolve: './src/plugins/fbm',
         messageRules: ['#', "*", "?"],
         url: "https://openapi.zalo.me/v2.0/oa",
     },
-    */
 
     'fbm': {
         enabled: true,

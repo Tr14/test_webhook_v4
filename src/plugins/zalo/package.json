@@ -1,9 +1,25 @@
 {
-  "name": "strapi-plugin-zalo",
+  "name": "zalo",
+  "version": "0.0.0",
+  "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "Zalo",
-    "icon": "comment-dots",
-    "description": "zalo.plugin.description"
+    "name": "zalo",
+    "description": "Description of Zalo plugin",
+    "kind": "plugin",
+    "displayName": "Zalo"
   },
-  "version": "1.0.0"
+  "dependencies": {},
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }

@@ -91,7 +91,7 @@ module.exports = {
         if (request_record != "") {
           console.log("RECORD", request_record)
 
-          let logging = await strapi.db.query('plugin::todo.log').create({
+          let logging = await strapi.db.query('plugin::netcore.netcorelog').create({
             data: {
               record: request_record,
               method: request_method,
@@ -139,7 +139,7 @@ module.exports = {
 
         try {
           if (email != "") {
-            let entry = await strapi.db.query('plugin::todo.lead').create({
+            let entry = await strapi.db.query('plugin::netcore.netcorelead').create({
               data: {
                 Email: email,
                 Phone: phone,
@@ -191,7 +191,7 @@ module.exports = {
       if (request_record != "") {
         console.log("RECORD", request_record)
 
-        let logging = await strapi.db.query('plugin::todo.log').create({
+        let logging = await strapi.db.query('plugin::netcore.netcorelog').create({
           data: {
             record: request_record,
             method: request_method,

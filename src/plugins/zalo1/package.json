@@ -1,0 +1,9 @@
+{
+  "name": "strapi-plugin-zalo",
+  "strapi": {
+    "name": "Zalo",
+    "icon": "comment-dots",
+    "description": "zalo.plugin.description"
+  },
+  "version": "1.0.0"
+}
