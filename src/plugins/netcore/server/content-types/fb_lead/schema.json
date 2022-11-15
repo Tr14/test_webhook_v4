@@ -1,11 +1,10 @@
 {
     "kind": "collectionType",
-    "collectionName": "NetcoreLeads",
+    "collectionName": "facebookleads",
     "info": {
-        "singularName": "NetcoreLeads",
-        "pluralName": "NetcoreLeads",
-        "name": "Netcore Leads",
-        "description": ""
+        "singularName": "facebooklead",
+        "pluralName": "facebookleads",
+        "displayName": "Facebook Leads"
     },
     "options": {
         "draftAndPublish": false,
@@ -25,19 +24,15 @@
             "required": true,
             "maxLentgh": 100
         },
-        "Phone": {
-            "type": "string",
-            "maxLentgh": 100
-        },
-        "Activity_Name": {
-            "type": "string",
-            "maxLentgh": 100
-        },
         "Full_Name": {
             "type": "string",
             "maxLentgh": 100
         },
-        "Journey_Name": {
+        "Form_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Page_Name": {
             "type": "string",
             "maxLentgh": 100
         },

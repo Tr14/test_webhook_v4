@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "NetcoreLogs",
+    "collectionName": "netcorelogs",
     "info": {
-        "singularName": "NetcoreLogs",
-        "pluralName": "NetcoreLogs",
+        "singularName": "netcorelog",
+        "pluralName": "netcorelogs",
         "name": "Netcore Log Activities"
     },
     "options": {

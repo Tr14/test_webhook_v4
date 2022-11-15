@@ -1,9 +1,10 @@
 'use strict';
-
-const FacebookLeads = require('./FacebookLead');
-const NetcoreLeads = require('./NetcoreLead');
-const NetcoreLogs = require('./NetcoreLog');
+const fb_lead = require('./fb_lead');
+const nc_lead = require('./nc_lead');
+const nc_log = require('./nc_log');
 
 module.exports = {
-    FacebookLeads
+    fb_lead,
+    nc_lead,
+    nc_log
 };
