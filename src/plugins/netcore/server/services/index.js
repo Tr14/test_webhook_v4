@@ -1,7 +1,7 @@
 'use strict';
 
-const myService = require('./my-service');
+const NetcoreServices = require('./Netcore');
 
 module.exports = {
-  myService,
+  NetcoreServices,
 };
