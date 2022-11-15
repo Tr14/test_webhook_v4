@@ -4,5 +4,7 @@ const netcorelead = require('./netcorelead');
 const netcorelog = require('./netcorelog');
 
 module.exports = {
-    facebooklead
+    facebooklead,
+    netcorelead,
+    netcorelog
 };
