@@ -1,0 +1,53 @@
+{
+    "kind": "collectionType",
+    "collectionName": "NetcoreLeads",
+    "info": {
+        "singularName": "NetcoreLeads",
+        "pluralName": "NetcoreLeads",
+        "name": "Netcore Leads",
+        "description": ""
+    },
+    "options": {
+        "draftAndPublish": false,
+        "comment": ""
+    },
+    "pluginOptions": {
+        "content-manager": {
+            "visible": true
+        },
+        "content-type-builder": {
+            "visible": true
+        }
+    },
+    "attributes": {
+        "Email": {
+            "type": "string",
+            "required": true,
+            "maxLentgh": 100
+        },
+        "Phone": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Activity_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Full_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Journey_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Source": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "isGet": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}
