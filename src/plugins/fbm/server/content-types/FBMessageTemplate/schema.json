@@ -1,0 +1,44 @@
+{
+    "kind": "collectionType",
+    "collectionName": "FBMessageTemplates",
+    "info": {
+        "singularName": "FBMessageTemplate",
+        "pluralName": "FBMessageTemplates",
+        "displayName": "Facebook message template"
+    },
+    "options": {
+        "increments": true,
+        "timestamps": true,
+        "draftAndPublish": false
+    },
+    "pluginOptions": {
+        "content-manager": {
+            "visible": true
+        },
+        "content-type-builder": {
+            "visible": true
+        }
+    },
+    "attributes": {
+        "message": {
+            "type": "string",
+            "maxLentgh": 5000
+        },
+        "title": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "subtitle": {
+            "type": "string",
+            "maxLentgh": 5000
+        },
+        "image": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "url": {
+            "type": "string",
+            "maxLentgh": 100
+        }
+    }
+}
