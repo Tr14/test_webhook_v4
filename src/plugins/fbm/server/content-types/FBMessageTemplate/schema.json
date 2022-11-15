@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "FBMessageTemplates",
+    "collectionName": "fbmessagetemplate",
     "info": {
-        "singularName": "FBMessageTemplate",
-        "pluralName": "FBMessageTemplates",
+        "singularName": "fbmessagetemplate",
+        "pluralName": "fbmessagetemplate",
         "displayName": "Facebook message template"
     },
     "options": {

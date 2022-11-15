@@ -1,6 +1,6 @@
 'use strict';
-const facebook = require('./FBMessageTemplate');
+const fbmessagetemplate = require('./fbmessagetemplate');
 
 module.exports = {
-    facebook,
+    fbmessagetemplate,
 };
