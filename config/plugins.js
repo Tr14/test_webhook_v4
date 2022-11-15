@@ -4,6 +4,7 @@ module.exports = {
         messageRules: ['#', "*", "?"],
         url: "https://openapi.zalo.me/v2.0/oa",
     },
+    */
 
     'fbm': {
         loginURL: "https://portal-uat.prudential.com.vn/pulse-lead-corporate/auth/login",
@@ -11,7 +12,6 @@ module.exports = {
         username: "pulseleaduat",
         password: "Prudential01@"
     },
-    */
 
     'netcore': {
         enabled: true,

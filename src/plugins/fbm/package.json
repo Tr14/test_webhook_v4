@@ -1,9 +1,25 @@
 {
-  "name": "strapi-plugin-fbm",
+  "name": "fbm",
+  "version": "0.0.0",
+  "description": "This is the description of the plugin.",
   "strapi": {
-    "name": "Facebook Messenger",
-    "icon": "comment-dots",
-    "description": "fbm.plugin.description"
+    "name": "fbm",
+    "description": "Description of Fbm plugin",
+    "kind": "plugin",
+    "displayName": "Fbm"
   },
-  "version": "1.0.0"
+  "dependencies": {},
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=18.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
 }
