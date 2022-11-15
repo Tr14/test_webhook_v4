@@ -4,7 +4,7 @@
     "info": {
         "singularName": "fbtemplate",
         "pluralName": "fbtemplates",
-        "displayName": "Facebook message template"
+        "displayName": "FB Message Template"
     },
     "options": {
         "draftAndPublish": false,
