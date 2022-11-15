@@ -1,4 +1,5 @@
 module.exports = {
+    /*
     'zalo': {
         messageRules: ['#', "*", "?"],
         url: "https://openapi.zalo.me/v2.0/oa",
@@ -10,6 +11,7 @@ module.exports = {
         username: "pulseleaduat",
         password: "Prudential01@"
     },
+    */
 
     'netcore': {
         enabled: true,
