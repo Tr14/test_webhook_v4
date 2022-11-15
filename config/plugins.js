@@ -13,6 +13,6 @@ module.exports = ({ env }) => ({
 
     netcore: {
         enabled: true,
-        resolve: './plugins/netcore'
+        resolve: '.src/plugins/netcore'
     }
 });
