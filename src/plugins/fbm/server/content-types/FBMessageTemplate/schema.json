@@ -7,9 +7,8 @@
         "displayName": "Facebook message template"
     },
     "options": {
-        "increments": true,
-        "timestamps": true,
-        "draftAndPublish": false
+        "draftAndPublish": false,
+        "comment": ""
     },
     "pluginOptions": {
         "content-manager": {
