@@ -4,7 +4,7 @@
     "info": {
         "singularName": "FacebookLeads",
         "pluralName": "FacebookLeads",
-        "name": "Facebook Leads"
+        "displayName": "Facebook Leads"
     },
     "options": {
         "draftAndPublish": false,
