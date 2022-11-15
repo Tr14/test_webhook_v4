@@ -7,6 +7,8 @@ module.exports = {
     */
 
     'fbm': {
+        enable: true,
+        resolve: './src/plugins/fbm',
         loginURL: "https://portal-uat.prudential.com.vn/pulse-lead-corporate/auth/login",
         sendURL: "https://portal-uat.prudential.com.vn/pulse-lead-corporate/message/send-msg",
         username: "pulseleaduat",
