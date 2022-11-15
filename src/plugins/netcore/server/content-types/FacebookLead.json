@@ -2,7 +2,7 @@
     "kind": "collectionType",
     "collectionName": "FacebookLeads",
     "info": {
-        "singularName": "FacebookLeads",
+        "singularName": "FacebookLead",
         "pluralName": "FacebookLeads",
         "displayName": "Facebook Leads"
     },
