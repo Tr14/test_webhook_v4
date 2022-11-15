@@ -1,6 +1,6 @@
 'use strict';
 
-const FacebookLeads = require('./FacebookLeads');
+const FacebookLeads = require('./FacebookLead');
 const NetcoreLeads = require('./NetcoreLeads');
 const NetcoreLogs = require('./NetcoreLogs');
 
