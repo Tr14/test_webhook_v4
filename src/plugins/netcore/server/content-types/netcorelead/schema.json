@@ -4,8 +4,7 @@
     "info": {
         "singularName": "netcorelead",
         "pluralName": "netcoreleads",
-        "name": "Netcore Leads",
-        "description": ""
+        "displayName": "Netcore Leads"
     },
     "options": {
         "draftAndPublish": false,

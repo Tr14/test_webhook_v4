@@ -4,7 +4,7 @@
     "info": {
         "singularName": "netcorelog",
         "pluralName": "netcorelogs",
-        "name": "Netcore Log Activities"
+        "displayName": "Netcore Log Activities"
     },
     "options": {
         "draftAndPublish": false,
