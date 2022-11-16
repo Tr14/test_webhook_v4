@@ -187,8 +187,10 @@ module.exports = {
               data: data
             }
 
+            let res = await axios(config);
+            console.log(res.data);
+
             console.log("DATA:", entry)
-            console.log("EH PRU DATA:", config)
           } else {
             console.log("EMAIL does not exist")
           }
