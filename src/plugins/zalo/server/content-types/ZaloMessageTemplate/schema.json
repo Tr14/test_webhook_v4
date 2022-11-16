@@ -7,9 +7,8 @@
         "displayName": "Zalo message template"
     },
     "options": {
-        "increments": true,
-        "timestamps": true,
-        "draftAndPublish": false
+        "draftAndPublish": false,
+        "comment": ""
     },
     "attributes": {
         "message": {

@@ -7,9 +7,8 @@
         "displayName": "Zalo report"
     },
     "options": {
-        "increments": true,
-        "timestamps": true,
-        "draftAndPublish": false
+        "draftAndPublish": false,
+        "comment": ""
     },
     "attributes": {
         "message_id": {

@@ -7,8 +7,8 @@
         "displayName": "Zalo configuration"
     },
     "options": {
-        "increments": true,
-        "timestamps": true
+        "draftAndPublish": false,
+        "comment": ""
     },
     "attributes": {
         "InstanceId": {
