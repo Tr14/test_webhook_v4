@@ -2,7 +2,7 @@
 
 const _ = require('lodash');
 
-const base64url = require('base64url');
+const pkceChallenge = require("pkce-challenge").default;
 
 //const fs = require('fs');
 //const path = require('path');
@@ -86,11 +86,7 @@ if (cluster.isMaster) {
 
 module.exports = {
   async getCode(ctx) {
-    const code_verifier = base64url(crypto.pseudoRandomBytes(32));
-
-    const code_challenge = Base64.encode(SHA256.hash(ASCII(code_verifier)))
-
-    ctx.body = "Verifier: " + code_verifier + ", Challenge: " + code_challenge;
+    ctx.body = pkceChallenge();
   },
 
   async getApps(ctx) {
