@@ -6,6 +6,7 @@ const pluginName = 'netcore';
 var cluster = require('cluster');
 const os = require('os');
 const numCPU = os.cpus().length;
+const qs = require('qs');
 
 var Queue = require('bull');
 
