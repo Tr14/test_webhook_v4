@@ -59,8 +59,9 @@ module.exports = {
   async send(ctx) {
     console.log(ctx.request.body);
     console.log(ctx.request.header);
-    //ctx.body = "Lmao"
+    ctx.body = "Lmao"
 
+    /*
     var basic_auth_panel = Buffer.from(ctx.request.header.authorization.split(" ")[1], 'base64').toString();
     console.log("Basic Auth Request:", basic_auth_panel)
 
@@ -202,6 +203,7 @@ module.exports = {
     } else {
       ctx.body = "User is not exist"
     }
+    */
   },
 
   async customApi(ctx) {
