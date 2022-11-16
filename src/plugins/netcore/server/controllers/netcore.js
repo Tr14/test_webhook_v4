@@ -190,7 +190,7 @@ module.exports = {
             }
 
             let res = await axios(config);
-            console.log(res.data);
+            console.log("EH DATA", res.data);
 
             console.log("DATA:", entry)
           } else {
