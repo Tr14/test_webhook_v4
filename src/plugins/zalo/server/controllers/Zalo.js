@@ -2,6 +2,8 @@
 
 const _ = require('lodash');
 
+const base64url = require('base64url');
+
 //const fs = require('fs');
 //const path = require('path');
 
@@ -86,10 +88,7 @@ module.exports = {
   async getCode(ctx) {
     const code_verifier = base64url(crypto.pseudoRandomBytes(32));
 
-    const code_challenge = crypto
-      .createHash("sha256")
-      .update(code_verifier)
-      .digest();
+    const code_challenge = Base64.encode(SHA256.hash(ASCII(code_verifier)))
 
     ctx.body = "Verifier: " + code_verifier + ", Challenge: " + code_challenge;
   },
