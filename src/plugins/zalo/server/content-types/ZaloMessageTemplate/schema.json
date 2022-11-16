@@ -1,0 +1,31 @@
+{
+    "kind": "collectionType",
+    "collectionName": "ZaloMessageTemplates",
+    "info": {
+        "singularName": "ZaloMessageTemplate",
+        "pluralName": "ZaloMessageTemplates",
+        "displayName": "Zalo message template"
+    },
+    "options": {
+        "increments": true,
+        "timestamps": true,
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "message": {
+            "type": "text"
+        },
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "text"
+        },
+        "image": {
+            "type": "string"
+        },
+        "url": {
+            "type": "string"
+        }
+    }
+}

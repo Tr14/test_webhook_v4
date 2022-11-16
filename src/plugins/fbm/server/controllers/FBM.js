@@ -31,7 +31,7 @@ if (cluster.isMaster) {
 
     let service = strapi
       .plugin('fbm')
-      .service('FBM')
+      .service('FBM');
 
     if (json.type === 'SEND_MESSAGE') {
       await service.sendMessage(json.data);

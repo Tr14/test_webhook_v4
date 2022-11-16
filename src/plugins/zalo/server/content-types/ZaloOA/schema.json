@@ -1,0 +1,39 @@
+{
+    "kind": "collectionType",
+    "collectionName": "ZaloOAs",
+    "info": {
+        "singularName": "ZaloOA",
+        "pluralName": "ZaloOAs",
+        "displayName": "Zalo OA"
+    },
+    "options": {
+        "increments": true,
+        "timestamps": true
+    },
+    "attributes": {
+        "app_id": {
+            "type": "string"
+        },
+        "token": {
+            "type": "text"
+        },
+        "name": {
+            "type": "string"
+        },
+        "description": {
+            "type": "text"
+        },
+        "avatar": {
+            "type": "string"
+        },
+        "cover": {
+            "type": "string"
+        },
+        "oa_id": {
+            "type": "string"
+        },
+        "is_verified": {
+            "type": "boolean"
+        }
+    }
+}
