@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "ZaloMessageRules",
+    "collectionName": "zalomessagerules",
     "info": {
-        "singularName": "ZaloMessageRule",
-        "pluralName": "ZaloMessageRules",
+        "singularName": "zalomessagerule",
+        "pluralName": "zalomessagerules",
         "displayName": "Zalo message rule"
     },
     "options": {

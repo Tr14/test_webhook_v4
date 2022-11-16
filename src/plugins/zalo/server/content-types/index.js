@@ -1,16 +1,16 @@
 'use strict';
-const ZaloConfig = require('./ZaloConfig');
-const ZaloFollower = require('./ZaloFollower');
-const ZaloMessageRule = require('./ZaloMessageRule');
-const ZaloMessageTemplate = require('./ZaloMessageTemplate');
-const ZaloOA = require('./ZaloOA');
-const ZaloReport = require('./ZaloReport');
+const zaloconfig = require('./zaloconfig');
+const zalofollower = require('./zalofollower');
+const zalomessagerule = require('./zalomessagerule');
+const zalomessagetemplate = require('./zalomessagetemplate');
+const zalooa = require('./zalooa');
+const zaloreport = require('./zaloreport');
 
 module.exports = {
-    ZaloConfig,
-    ZaloFollower,
-    ZaloMessageRule,
-    ZaloMessageTemplate,
-    ZaloOA,
-    ZaloReport
+    zaloconfig,
+    zalofollower,
+    zalomessagerule,
+    zalomessagetemplate,
+    zalooa,
+    zaloreport
 };

@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "ZaloFollowers",
+    "collectionName": "zalofollowers",
     "info": {
-        "singularName": "ZaloFollower",
-        "pluralName": "ZaloFollowers",
+        "singularName": "zalofollower",
+        "pluralName": "zalofollowers",
         "displayName": "Zalo followers"
     },
     "options": {

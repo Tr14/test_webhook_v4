@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "ZaloReports",
+    "collectionName": "zaloreports",
     "info": {
-        "singularName": "ZaloReport",
-        "pluralName": "ZaloReports",
+        "singularName": "zaloreport",
+        "pluralName": "zaloreports",
         "displayName": "Zalo report"
     },
     "options": {

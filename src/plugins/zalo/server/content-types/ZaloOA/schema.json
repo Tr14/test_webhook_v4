@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "ZaloOAs",
+    "collectionName": "zalooas",
     "info": {
-        "singularName": "ZaloOA",
-        "pluralName": "ZaloOAs",
+        "singularName": "zalooa",
+        "pluralName": "zalooas",
         "displayName": "Zalo OA"
     },
     "options": {

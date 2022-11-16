@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "ZaloConfigs",
+    "collectionName": "zaloconfigs",
     "info": {
-        "singularName": "ZaloConfig",
-        "pluralName": "ZaloConfigs",
+        "singularName": "zaloconfig",
+        "pluralName": "zaloconfigs",
         "displayName": "Zalo configuration"
     },
     "options": {

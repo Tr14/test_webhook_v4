@@ -1,9 +1,9 @@
 {
     "kind": "collectionType",
-    "collectionName": "ZaloMessageTemplates",
+    "collectionName": "zalomessagetemplates",
     "info": {
-        "singularName": "ZaloMessageTemplate",
-        "pluralName": "ZaloMessageTemplates",
+        "singularName": "zalomessagetemplates",
+        "pluralName": "zalomessagetemplates",
         "displayName": "Zalo message template"
     },
     "options": {
