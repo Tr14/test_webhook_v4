@@ -178,6 +178,8 @@ module.exports = {
               }
             );
 
+            console.log("PRU POST DATA", data);
+
             const config = {
               method: 'POST',
               url: 'https://ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net/dev-cdp/messages',
