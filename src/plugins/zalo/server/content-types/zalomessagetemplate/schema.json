@@ -2,7 +2,7 @@
     "kind": "collectionType",
     "collectionName": "zalomessagetemplates",
     "info": {
-        "singularName": "zalomessagetemplates",
+        "singularName": "zalomessagetemplate",
         "pluralName": "zalomessagetemplates",
         "displayName": "Zalo message template"
     },
