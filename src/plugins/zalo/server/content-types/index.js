@@ -4,7 +4,7 @@ const zalofollower = require('./zalofollower');
 const zalomessagerule = require('./zalomessagerule');
 const zalomessagetemplate = require('./zalomessagetemplate');
 const zalooa = require('./zalooa');
-const zaloreport = require('./zaloreports');
+const zaloreport = require('./zaloreport');
 
 module.exports = {
     zaloconfig,

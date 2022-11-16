@@ -84,7 +84,7 @@ if (cluster.isMaster) {
 
 module.exports = {
 
-  getApps: async ctx => {
+  async getApps(ctx) {
     console.log('get zalo apps:');
     //console.log(ctx.request.body);   
 
