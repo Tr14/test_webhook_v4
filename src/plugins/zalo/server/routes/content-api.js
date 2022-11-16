@@ -6,6 +6,15 @@ module.exports = {
     "routes": [
         {
             method: "GET",
+            path: "/getCode",
+            handler: "Zalo.getCode",
+            config: {
+                policies: [],
+                description: "Get code"
+            }
+        },
+        {
+            method: "GET",
             path: "/apps",
             handler: "Zalo.getApps",
             config: {

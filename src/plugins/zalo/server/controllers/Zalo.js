@@ -83,6 +83,16 @@ if (cluster.isMaster) {
 }
 
 module.exports = {
+  async getCode(ctx) {
+    const code_verifier = base64url(crypto.pseudoRandomBytes(32));
+
+    const code_challenge = crypto
+      .createHash("sha256")
+      .update(code_verifier)
+      .digest();
+
+    ctx.body = "Verifier: " + code_verifier + ", Challenge: " + code_challenge;
+  },
 
   async getApps(ctx) {
     console.log('get zalo apps:');
