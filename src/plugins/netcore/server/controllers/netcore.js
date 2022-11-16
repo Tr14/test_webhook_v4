@@ -6,7 +6,6 @@ const pluginName = 'netcore';
 var cluster = require('cluster');
 const os = require('os');
 const numCPU = os.cpus().length;
-const qs = require('qs');
 
 var Queue = require('bull');
 
@@ -148,7 +147,7 @@ module.exports = {
               }
             });
 
-            let data = qs.stringify(
+            let data = JSON.stringify(
               {
                 body: {
                   webhook_name: 'AKA_CUSTOM_APP',
@@ -184,9 +183,9 @@ module.exports = {
               method: 'POST',
               url: 'https://ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net/dev-cdp/messages',
               headers: {
-                Authorization: 'SharedAccessSignature sr=ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net%2Fdev-cdp&sig=qvNWm8td2zppTt7QaORYfILaZp6RpVjuZvncxu%2FaGV4%3D&se=4778184572&skn=datalake_Rule1_premium',
+                'Authorization': 'SharedAccessSignature sr=ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net%2Fdev-cdp&sig=qvNWm8td2zppTt7QaORYfILaZp6RpVjuZvncxu%2FaGV4%3D&se=4778184572&skn=datalake_Rule1_premium',
                 'Content-Type': 'application/x-www-form-urlencoded',
-                Host: 'ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net'
+                'Host': 'ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net'
               },
               data: data
             }
