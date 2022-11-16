@@ -115,42 +115,80 @@ module.exports = {
       let data = JSON.parse(data_body);
       console.log("data:", data);
       console.log("typeof data:", typeof data);
-      console.log("data length:", data.voolatechsmt.length);
+      console.log("data length:", data.mkt_prudential.length);
 
       //loop through response and store data to Lead content-type
       let email = [];
       let full_name = [];
-      let phone = [];
-      let activity_name = [];
+      let mobile = [];
       let journey_name = [];
-      for (let i = 0; i < data.voolatechsmt.length; i++) {
-        email = data.voolatechsmt[i].att_params.EMAIL;
-        full_name = data.voolatechsmt[i].att_params.FULL_NAME;
-        phone = data.voolatechsmt[i].att_params.PHONE;
-        activity_name = data.voolatechsmt[i].event_params.activity_name;
-        journey_name = data.voolatechsmt[i].journey_name;
+      for (let i = 0; i < data.mkt_prudential.length; i++) {
+        email = data.mkt_prudential[i].att_params.EMAIL;
+        full_name = data.mkt_prudential[i].att_params.FULL_NAME;
+        mobile = data.mkt_prudential[i].att_params.MOBILE;
+        journey_name = data.mkt_prudential[i].journey_name;
 
         console.log("Email:", email);
         console.log("Full Name:", full_name);
-        console.log("Phone:", phone);
-        console.log("Activity Name:", activity_name);
+        console.log("Phone:", mobile);
         console.log("Journey Name:", journey_name);
 
         try {
-          if (email != "") {
+          if (mobile != "") {
             let entry = await strapi.db.query('plugin::netcore.netcorelead').create({
               data: {
                 Email: email,
-                Phone: phone,
+                Phone: mobile,
                 Full_Name: full_name,
-                Activity_Name: activity_name,
                 Journey_Name: journey_name,
                 isGet: false,
                 Source: "Netcore Smartech"
               }
             });
 
+            let data = qs.stringify(
+              {
+                body: {
+                  webhook_name: 'AKA_CUSTOM_APP',
+                  attributesExt: {
+                    MOBILE: mobile,
+                    EMAIL: email,
+                    FULL_NAME: full_name
+                  }
+                },
+                authenRequestForm: {
+                  signatureDocuments: [{
+                    name: "PS71743503/OeJpQzvc0o5_screen shot 2022-06-14 at 094453.png",
+                    url: "https://pru-api-nprd.prudential.com.vn/azurestorage/1-0-0/pulseforops"
+                  }],
+                  authFlag: true
+                },
+                documents: [{
+                  name: "PS71743503/OeJpQzvc0o5_screen shot 2022-06-14 at 094453.png",
+                  url: "https://pru-api-nprd.prudential.com.vn/azurestorage/1-0-0/pulseforops"
+                }],
+                authenOption: "ATTACH_REQUEST_FORM",
+                primaryPolicyNo: "71743503",
+                clientId: "47859152",
+                officeCode: "BMT",
+                createdDate: "2022-11-16T06:59:23.984Z",
+                isCCE: false
+              }
+            );
+
+            const config = {
+              method: 'POST',
+              url: 'https://ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net/dev-cdp/messages',
+              headers: {
+                Authorization: 'SharedAccessSignature sr=ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net%2Fdev-cdp&sig=qvNWm8td2zppTt7QaORYfILaZp6RpVjuZvncxu%2FaGV4%3D&se=4778184572&skn=datalake_Rule1_premium',
+                'Content-Type': 'application/x-www-form-urlencoded',
+                Host: 'ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net'
+              },
+              data: data
+            }
+
             console.log("DATA:", entry)
+            console.log("EH PRU DATA:", config)
           } else {
             console.log("EMAIL does not exist")
           }
@@ -161,19 +199,12 @@ module.exports = {
     } else {
       ctx.body = "User is not exist"
     }
-
-    //console.log("ARRAY EMAIL", data.voolatechsmt);
-    // console.log("Device name:", data.voolatechsmt[0].payload_params.name);
-    // console.log("Activity:", data.voolatechsmt[0].event_params.activity_name);
-    //console.log("EMAIL:", data.voolatechsmt[0].att_params.EMAIL);
-    // console.log("PHONE:", data.voolatechsmt[0].att_params.PHONE);
-    //console.log("FULL NAME:", data.voolatechsmt[0].att_params.FULL_NAME);
   },
 
   async customApi(ctx) {
     ctx.body = strapi
-      .plugin('todo')
-      .service('myServiceWebhook')
+      .plugin('netcore')
+      .service('NetcoreServices')
       .getResultLogging();
 
     //Logging
