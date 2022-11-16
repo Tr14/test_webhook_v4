@@ -59,6 +59,7 @@ module.exports = {
   async send(ctx) {
     console.log(ctx.request.body);
     console.log(ctx.request.header);
+    ctx.body = "Lmao"
 
     /*
     var basic_auth_panel = Buffer.from(ctx.request.header.authorization.split(" ")[1], 'base64').toString();
