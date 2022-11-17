@@ -8,8 +8,8 @@ module.exports = ({ env }) => ({
   },
   redis: {
     port: 6379,
-    host: '127.0.0.1',
-    password: '!Vola@2021@'
+    host: 'redis://red-cdr4hch4rebaqdb1mrug:6379',
+    password: 'Wy22xIVR3Y2WJUr184hDDd5fMYRgefED'
   },
   app: {
     keys: env.array('APP_KEYS'),
