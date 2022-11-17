@@ -17,6 +17,7 @@
     "css-loader": "^6.7.2",
     "knex": "<0.20.0",
     "pg": "^8.7.1",
+    "pkce-challenge": "^3.0.0",
     "strapi-provider-email-mailtrap": "^3.1.5",
     "style-loader": "^3.3.1"
   },
