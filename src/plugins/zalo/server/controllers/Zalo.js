@@ -101,7 +101,7 @@ module.exports = {
     ctx.send(result);
   },
 
-  addZaloOA: async ctx => {
+  async addZaloOA(ctx) {
     console.log('addZaloOA:');
     console.log(ctx.request.body);
 
