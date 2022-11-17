@@ -4,11 +4,7 @@ module.exports = ({ env }) => ({
     connector: 'bookshelf',
     connection: {
       host: env('DATABASE_HOST', 'postgres://tructest:Wy22xIVR3Y2WJUr184hDDd5fMYRgefED@dpg-cdr4a6en6mpqj2ddu2b0-a/postgres_sfxp'),
-      port: env.int('DATABASE_PORT', 5432),
-      database: env('DATABASE_NAME', 'postgres_sfxp'),
-      user: env('DATABASE_USERNAME', 'tructest'),
       password: env('DATABASE_PASSWORD', 'Wy22xIVR3Y2WJUr184hDDd5fMYRgefED'),
-      ssl: env.bool('DATABASE_SSL', false),
     }
   }
 });

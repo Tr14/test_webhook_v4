@@ -7,9 +7,7 @@ module.exports = ({ env }) => ({
     },
   },
   redis: {
-    port: 6379,
-    host: 'redis://red-cdr4hch4rebaqdb1mrug:6379',
-    password: 'Wy22xIVR3Y2WJUr184hDDd5fMYRgefED'
+    host: 'redis://red-cdr4hch4rebaqdb1mrug:6379'
   },
   app: {
     keys: env.array('APP_KEYS'),
