@@ -3,11 +3,11 @@ module.exports = ({ env }) => ({
     client: 'postgres',
     connector: 'bookshelf',
     connection: {
-      host: env('DATABASE_HOST', '127.0.0.1'),
+      host: env('DATABASE_HOST', 'dpg-cdr4a6en6mpqj2ddu2b0-a'),
       port: env.int('DATABASE_PORT', 5432),
-      database: env('DATABASE_NAME', 'postgres'),
+      database: env('DATABASE_NAME', 'postgres_sfxp'),
       user: env('DATABASE_USERNAME', 'tructest'),
-      password: env('DATABASE_PASSWORD', '!Vola@1204@'),
+      password: env('DATABASE_PASSWORD', 'Wy22xIVR3Y2WJUr184hDDd5fMYRgefED'),
       ssl: env.bool('DATABASE_SSL', false),
     }
   }
