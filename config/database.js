@@ -20,6 +20,6 @@ module.exports = ({ env }) => ({
 
   url: "postgres://tructest:Wy22xIVR3Y2WJUr184hDDd5fMYRgefED@dpg-cdr4a6en6mpqj2ddu2b0-a.oregon-postgres.render.com/postgres_sfxp?ssl=true",
   dirs: {
-    public: "data/public"
+    public: "/data/public"
   }
 });
