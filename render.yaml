@@ -10,7 +10,7 @@ databases:
    plan: starter plus
    repo: https://github.com/render-oss/docker-pgbouncer
    envVars:
-   - key: postgres://tructest:Wy22xIVR3Y2WJUr184hDDd5fMYRgefED@dpg-cdr4a6en6mpqj2ddu2b0-a/postgres_sfxp
+   - key: postgres://tructest:Wy22xIVR3Y2WJUr184hDDd5fMYRgefED@dpg-cdr4a6en6mpqj2ddu2b0-a.oregon-postgres.render.com/postgres_sfxp
      fromDatabase:
        name: postgres
        property: connectionString
