@@ -1,17 +1,3 @@
-const client = createClient({
-  url: process.env.REDIS_URL
-});
-
-client.on('error', (err) => console.log('Redis Client Error', err));
-
-await client.connect();
-
-// Send and retrieve some values
-await client.set('key', 'node redis');
-const value = await client.get('key');
-
-console.log("found value: ", value)
-
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
