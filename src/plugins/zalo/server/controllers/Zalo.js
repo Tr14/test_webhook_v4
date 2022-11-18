@@ -36,9 +36,7 @@ if (cluster.isMaster) {
 
     let json = job.data;
 
-    let zs = strapi
-      .plugin('zalo')
-      .service('Zalo');
+    let zs = strapi.plugin('zalo').service('Zalo');
     //if (json.type === 'CONTACT') {
     //  await zs.saveToResponsys(json.contact, json.message, json.response);
     //}
@@ -93,9 +91,7 @@ module.exports = {
     console.log('get zalo apps:');
     //console.log(ctx.request.body);   
 
-    let zs = strapi
-      .plugin('zalo')
-      .service('Zalo');
+    let zs = strapi.plugin('zalo').service('Zalo');
     let result = await zs.getApps(ctx.request.body);
 
     ctx.send(result);
@@ -105,39 +101,35 @@ module.exports = {
     console.log('addZaloOA:');
     console.log(ctx.request.body);
 
-    let zs = strapi
-      .plugin('zalo')
-      .service('Zalo');
+    let zs = strapi.plugin('zalo').service('Zalo');
     let result = await zs.addZaloOA(ctx.request.body);
 
     ctx.send(result);
   },
 
-  index: async ctx => {
+  async index(ctx) {
     console.log('zalo app index:');
     console.log(ctx.request.body);
     ctx.send({ ok: true });
   },
 
-  callback: async ctx => {
+  async callback(ctx) {
     console.log('zalo callback:');
     console.log(ctx.request.body);
     ctx.send({ ok: true });
   },
 
-  webhook: async ctx => {
+  async webhook(ctx) {
     console.log('zalo webhook:');
     console.log(ctx.request.body);
 
-    let service = strapi
-      .plugin('zalo')
-      .service('Zalo');
+    let service = strapi.plugin('zalo').service('Zalo');
     service.webhook(ctx.request.body);
 
     ctx.send({ ok: true });
   },
 
-  callbackFromZalo: (contact, message, response) => {
+  async callbackFromZalo(contact, message, response) {
     // zaloQueue.add({
     //   type: 'CONTACT',
     //   contact, 
@@ -146,27 +138,25 @@ module.exports = {
     // });
   },
 
-  getFollowers: async ctx => {
-    //let service = strapi.plugins[pluginName].services.zalo;
+  async getFollowers(ctx) {
+    //let service = strapi.plugin('zalo').service('Zalo');
     //let json = await service.test(ctx.request.body);
 
-    const entry = await strapi.query('ZaloFollower', pluginName).find({
+    const entry = await strapi.db.query('plugin::zalo.zalofollower').find({
 
     });
 
     ctx.send({ ok: true, data: entry });
   },
 
-  syncFollowers: async ctx => {
-    let service = strapi
-      .plugin('zalo')
-      .service('Zalo');
+  async syncFollowers(ctx) {
+    let service = strapi.plugin('zalo').service('Zalo');
     let json = await service.prepareSync(ctx.request.body.id);
 
     ctx.send(json);
   },
 
-  send: async ctx => {
+  async send(ctx) {
     console.log('zalo send:');
     console.log(ctx.request.body);
 
@@ -199,63 +189,63 @@ module.exports = {
     ctx.send({ ok: true });
   },
 
-  callback_syncFollowers: async (offset, count, token, ZOAId) => {
+  async callback_syncFollowers(offset, count, token, ZOAId) {
     zaloQueue.add({
       type: 'SYNC_FOLLOWER',
       offset, count, token, ZOAId
     });
   },
 
-  callback_getFollower: (userId, timestamp, token, ZOAId) => {
+  async callback_getFollower(userId, timestamp, token, ZOAId) {
     zaloQueue.add({
       type: 'GET_FOLLOWER',
       userId, timestamp, token, ZOAId
     });
   },
 
-  callback_unfollow: (userId, timestamp, token, ZOAId) => {
+  async callback_unfollow(userId, timestamp, token, ZOAId) {
     zaloQueue.add({
       type: 'UN_FOLLOW',
       userId, timestamp, token, ZOAId
     });
   },
 
-  callback_handleMesssage: (appId, userId, message, timestamp) => {
+  async callback_handleMesssage(appId, userId, message, timestamp) {
     zaloQueue.add({
       type: 'HANDLE_MESSAGE',
       appId, userId, message, timestamp
     });
   },
 
-  callback_addContact: (userId, timestamp, mobile, token, ZOAId) => {
+  async callback_addContact(userId, timestamp, mobile, token, ZOAId) {
     zaloQueue.add({
       type: 'ADD_CONTACT',
       userId, timestamp, mobile, token, ZOAId
     });
   },
 
-  callback_handleRead: (data) => {
+  async callback_handleRead(data) {
     zaloQueue.add({
       type: 'HANDLE_READ',
       data
     });
   },
 
-  callback_sendMessage: (config, contact, message) => {
+  async callback_sendMessage(config, contact, message) {
     // zaloQueue.add({
     //   type: 'SEND_MESSAGE',
     //   config, contact, message
     // });
   },
 
-  callback_saveSentReport: (contact, message, response) => {
+  async callback_saveSentReport(contact, message, response) {
     // zaloQueue.add({
     //   type: 'SENT_REPORT',
     //   contact, message, response
     // });
   },
 
-  callback_saveReceivedReport: (userId, messageId, timestamp) => {
+  async callback_saveReceivedReport(userId, messageId, timestamp) {
     // zaloQueue.add({
     //   type: 'RECEIVED_REPORT',
     //   userId, messageId, timestamp
