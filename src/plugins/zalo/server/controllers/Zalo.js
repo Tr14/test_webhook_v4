@@ -126,13 +126,13 @@ module.exports = {
     let service = strapi.plugin('zalo').service('Zalo');
     service.webhook(ctx.request.body);
 
-    const { event_name } = data;
+    const { event_name } = ctx.request.body.data.event_name;
 
     //follow
     if (event_name === 'follow') {
       try {
         let entry = await strapi.db.query('plugin::zalo.zalooa').findOne({
-          app_id: data.app_id
+          app_id: ctx.request.body.data.app_id
         }, []);
 
         console.log('ENTRY')
@@ -141,9 +141,9 @@ module.exports = {
         if (entry) {
           let entry = await strapi.db.query('plugin::zalo.zalooa').create({
             data: {
-              app_id: data.app_id,
-              user_id: data.follower.id,
-              zalo_oa: data.oa_id
+              app_id: ctx.request.body.data.app_id,
+              user_id: ctx.request.body.data.follower.id,
+              zalo_oa: ctx.request.body.data.oa_id
             }
           })
 
