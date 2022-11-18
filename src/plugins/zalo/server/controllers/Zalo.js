@@ -83,6 +83,10 @@ if (cluster.isMaster) {
 }
 
 module.exports = {
+  async getCode(ctx) {
+    ctx.body = pkceChallenge();
+  },
+
   async getApps(ctx) {
     console.log('get zalo apps:');
     //console.log(ctx.request.body);   
