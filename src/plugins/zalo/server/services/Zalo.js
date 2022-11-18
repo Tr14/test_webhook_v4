@@ -124,7 +124,7 @@ module.exports = {
       let entry = await strapi.db.query('plugin::zalo.zalooa').create(json);
 
       if (entry) {
-        let controller = strapi.plugin('zalo').controllers('Zalo');
+        let controller = strapi.controller('plugin::zalo.Zalo');
         controller.callback_syncFollowers(0, 50, data.token, entry.id);
       }
 
@@ -163,7 +163,7 @@ module.exports = {
         }, []);
 
         if (entry) {
-          let controller = strapi.plugin('zalo').controllers('Zalo');
+          let controller = strapi.controller('plugin::zalo.Zalo');
           controller.callback_getFollower(data.follower.id, data.timestamp, entry.token, entry.id);
         }
 
@@ -192,7 +192,7 @@ module.exports = {
         });
 
         if (entry) {
-          let controller = strapi.plugin('zalo').controllers('Zalo');
+          let controller = strapi.controller('plugin::zalo.Zalo');
           controller.callback_unfollow(data.follower.id, data.timestamp, entry.token, entry.id);
         }
 
@@ -237,7 +237,7 @@ module.exports = {
         console.log('send to queue: callback_handleMesssage')
 
         //deep check by message rule
-        let controller = strapi.plugin('zalo').controllers('Zalo');
+        let controller = strapi.controller('plugin::zalo.Zalo');
         controller.callback_handleMesssage(data.app_id, data.sender.id, data.message.text, data.timestamp);
 
 
@@ -249,10 +249,10 @@ module.exports = {
         // if (isMobile) {
         //   let entry = await strapi.db.query('ZaloOA', pluginName).findOne({
         //     app_id: data.app_id
-        //   }, []);  
+        //   }, []);
 
         //   if (entry) {
-        //     let controller = strapi.plugins[pluginName].controllers.zalo;
+        //     let controller = strapi.controller('plugin::zalo.Zalo');
         //     controller.callback_addContact(data.sender.id, data.timestamp, mobile, entry.token, entry.id);
         //   }
         // }
@@ -271,7 +271,7 @@ module.exports = {
         timestamp: data.timestamp
       };
 
-      let controller = strapi.plugin('zalo').controllers('Zalo');
+      let controller = strapi.controller('plugin::zalo.Zalo');
       controller.callback_handleRead(obj);
     }
   },
@@ -308,7 +308,7 @@ module.exports = {
 
       console.log(value);
 
-      let controller = strapi.plugin('zalo').controllers('Zalo');
+      let controller = strapi.controller('plugin::zalo.Zalo');
       controller.callback_addContact(user_id, timestamp, value, entry.token, entry.id);
     }
 
@@ -393,7 +393,7 @@ module.exports = {
     }, []);
 
     if (entry) {
-      let controller = strapi.plugin('zalo').controllers('Zalo');
+      let controller = strapi.controller('plugin::zalo.Zalo');
       controller.callback_syncFollowers(0, 50, entry.token, entry.id);
     }
 
@@ -421,7 +421,7 @@ module.exports = {
 
         console.log(offset, count, total);
 
-        let controller = strapi.plugin('zalo').controllers('Zalo');
+        let controller = strapi.controller('plugin::zalo.Zalo');
 
         let followers = res.data.data.followers;
 
