@@ -127,7 +127,7 @@ module.exports = {
     service.webhook(ctx.request.body);
 
     console.log("SERVICE")
-    console.log(service.webhook(ctx.request.body))
+    console.log(service.webhook(ctx.request.body.promise))
 
     ctx.send({ ok: true });
   },
