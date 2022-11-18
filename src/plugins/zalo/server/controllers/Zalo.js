@@ -126,6 +126,9 @@ module.exports = {
     let service = strapi.plugin('zalo').service('Zalo');
     service.webhook(ctx.request.body);
 
+    console.log("SERVICE")
+    console.log(service.webhook(ctx.request.body))
+
     ctx.send({ ok: true });
   },
 
