@@ -162,9 +162,15 @@ module.exports = {
           app_id: data.app_id
         }, []);
 
+        console.log('ENTRY')
+        console.log('entry')
+
         if (entry) {
           let controller = strapi.controller('plugin::zalo.Zalo');
           controller.callback_getFollower(data.follower.id, data.timestamp, entry.token, entry.id);
+
+          console.log("CONTROLLER")
+          console.log(controller.callback_getFollower(data.follower.id, data.timestamp, entry.token, entry.id))
         }
 
       } catch (err) {
