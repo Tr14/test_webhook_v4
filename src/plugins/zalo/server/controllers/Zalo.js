@@ -126,36 +126,7 @@ module.exports = {
     let service = strapi.plugin('zalo').service('Zalo');
     service.webhook(ctx.request.body);
 
-    const { event_name } = ctx.request.body.data.event_name;
-
-    //follow
-    if (event_name === 'follow') {
-      try {
-        let entry = await strapi.db.query('plugin::zalo.zalooa').findOne({
-          app_id: ctx.request.body.data.app_id
-        }, []);
-
-        console.log('ENTRY')
-        console.log(entry)
-
-        if (entry) {
-          let entry = await strapi.db.query('plugin::zalo.zalooa').create({
-            data: {
-              app_id: ctx.request.body.data.app_id,
-              user_id: ctx.request.body.data.follower.id,
-              zalo_oa: ctx.request.body.data.oa_id
-            }
-          })
-
-          console.log("DATA:", entry)
-        }
-
-      } catch (err) {
-        console.log(err);
-      }
-
-      ctx.send({ ok: true });
-    }
+    ctx.send({ ok: true });
   },
 
   async callbackFromZalo(contact, message, response) {

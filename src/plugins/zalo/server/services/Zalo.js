@@ -169,8 +169,15 @@ module.exports = {
           let controller = strapi.controller('plugin::zalo.Zalo');
           controller.callback_getFollower(data.follower.id, data.timestamp, entry.token, entry.id);
 
-          console.log("CONTROLLER")
-          console.log(controller.callback_getFollower(data.follower.id, data.timestamp, entry.token, entry.id))
+          let pushdata = await strapi.db.query('plugin::zalo.zalooa').create({
+            data: {
+              app_id: data.app_id,
+              user_id: data.follower.id
+            }
+          })
+
+          console.log("pushdata")
+          console.log(pushdata)
         }
 
       } catch (err) {
