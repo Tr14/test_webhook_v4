@@ -1,14 +1,15 @@
 module.exports = ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
-  url: "https://aka-webhook.onrender.com",
   admin: {
     auth: {
       secret: env('ADMIN_JWT_SECRET', '66d343acd9de7727c33374ad339af7dd'),
     },
   },
   redis: {
-    host: 'redis://red-cdr4hch4rebaqdb1mrug:6379'
+    port: 6379,
+    host: '127.0.0.1',
+    password: '!Vola@2021@'
   },
   app: {
     keys: env.array('APP_KEYS'),
