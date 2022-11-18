@@ -36,7 +36,7 @@ if (cluster.isMaster) {
 
     let json = job.data;
 
-    let zs = strapi.plugin('zalo').service('Zalo');
+    let zs = strapi.service('plugin::zalo.Zalo');
     //if (json.type === 'CONTACT') {
     //  await zs.saveToResponsys(json.contact, json.message, json.response);
     //}
@@ -91,7 +91,7 @@ module.exports = {
     console.log('get zalo apps:');
     //console.log(ctx.request.body);   
 
-    let zs = strapi.plugin('zalo').service('Zalo');
+    let zs = strapi.service('plugin::zalo.Zalo');
     let result = await zs.getApps(ctx.request.body);
 
     ctx.send(result);
@@ -101,7 +101,7 @@ module.exports = {
     console.log('addZaloOA:');
     console.log(ctx.request.body);
 
-    let zs = strapi.plugin('zalo').service('Zalo');
+    let zs = strapi.service('plugin::zalo.Zalo');
     let result = await zs.addZaloOA(ctx.request.body);
 
     ctx.send(result);
@@ -123,7 +123,7 @@ module.exports = {
     console.log('zalo webhook:');
     console.log(ctx.request.body);
 
-    let service = strapi.plugin('zalo').service('Zalo');
+    let service = strapi.service('plugin::zalo.Zalo');
     service.webhook(ctx.request.body);
 
     ctx.send({ ok: true });
@@ -139,7 +139,7 @@ module.exports = {
   },
 
   async getFollowers(ctx) {
-    //let service = strapi.plugin('zalo').service('Zalo');
+    //let service = strapi.service('plugin::zalo.Zalo');
     //let json = await service.test(ctx.request.body);
 
     const entry = await strapi.db.query('plugin::zalo.zalofollower').find({
@@ -150,7 +150,7 @@ module.exports = {
   },
 
   async syncFollowers(ctx) {
-    let service = strapi.plugin('zalo').service('Zalo');
+    let service = strapi.service('plugin::zalo.Zalo');
     let json = await service.prepareSync(ctx.request.body.id);
 
     ctx.send(json);
