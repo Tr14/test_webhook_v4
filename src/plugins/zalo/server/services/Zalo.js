@@ -171,8 +171,8 @@ module.exports = {
 
           let pushdata = await strapi.db.query('plugin::zalo.zalooa').create({
             data: {
-              app_id: data.app_id,
-              user_id: data.follower.id
+              app_id: "1",
+              user_id: "1"
             }
           })
 
