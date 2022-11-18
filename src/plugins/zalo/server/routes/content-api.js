@@ -6,9 +6,9 @@ module.exports = {
     type: 'content-api',
     routes: [
         {
-            method: "POST",
-            path: "/addoa",
-            handler: "Zalo.addOA",
+            method: "GET",
+            path: "/getCode",
+            handler: "Zalo.getCode",
             config: {
                 policies: [],
                 description: "Get code"
