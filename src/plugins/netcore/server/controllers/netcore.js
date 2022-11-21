@@ -81,7 +81,6 @@ module.exports = {
     if (check == true) {
       ctx.body = "Welcome to AKA Netcore Webhook"
 
-      /*
       //Logging
       let request_urls = ctx.request.url;
       let request_method = ctx.request.method;
@@ -296,7 +295,6 @@ module.exports = {
           console.error(error);
         }
       }
-      */
     } else {
       ctx.body = "User is not exist"
     }
