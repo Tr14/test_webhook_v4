@@ -36,8 +36,13 @@
             "type": "string",
             "maxLentgh": 500
         },
-        "created_date": {
-            "type": "datetime"
+        "email": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "mobile": {
+            "type": "string",
+            "maxLentgh": 100
         }
     }
 }

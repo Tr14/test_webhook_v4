@@ -24,11 +24,7 @@
             "required": true,
             "maxLentgh": 100
         },
-        "Phone": {
-            "type": "string",
-            "maxLentgh": 100
-        },
-        "Activity_Name": {
+        "Mobile": {
             "type": "string",
             "maxLentgh": 100
         },
@@ -36,11 +32,116 @@
             "type": "string",
             "maxLentgh": 100
         },
-        "Journey_Name": {
+        "First_Name": {
             "type": "string",
             "maxLentgh": 100
         },
-        "Source": {
+        "Last_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "City": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Zalo_OA_ID": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "FB_ID": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Gender": {
+            "type": "string",
+            "maxLentgh": 10
+        },
+        "Address": {
+            "type": "string",
+            "maxLentgh": 500
+        },
+        "Marriage_Status": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Age": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "DOB": {
+            "type": "datetime"
+        },
+        "Zalo_Followed_At": {
+            "type": "datetime"
+        },
+        "Zalo_Unfollowed_At": {
+            "type": "datetime"
+        },
+        "APPTDTE": {
+            "type": "datetime"
+        },
+        "Last_Call": {
+            "type": "datetime"
+        },
+        "Zalo_OA_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Zalo_OA_Status": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Place_of_Work": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Year_of_Experience": {
+            "type": "string",
+            "maxLentgh": 3
+        },
+        "Career": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Academic_Level": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Lead_Status": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Product_Like": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Call_Result": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Appointment_Date": {
+            "type": "datetime"
+        },
+        "Appointment_Time": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Contract": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Support_Status": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Lead_Source": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Submitted_Date": {
+            "type": "datetime"
+        },
+        "Journey_Name": {
             "type": "string",
             "maxLentgh": 100
         },

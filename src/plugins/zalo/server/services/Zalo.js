@@ -486,6 +486,7 @@ module.exports = {
         //upsert to db
         if (!entry) {
           entry = await strapi.db.query('plugin::zalo.zalofollower').create(data);
+          console.log("1")
         } else {
           entry = await strapi.db.query('plugin::zalo.zalofollower').update({
             user_id: user_id

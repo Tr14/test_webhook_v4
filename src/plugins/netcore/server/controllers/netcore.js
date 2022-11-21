@@ -83,64 +83,124 @@ module.exports = {
       //Logging
       let request_urls = ctx.request.url;
       let request_method = ctx.request.method;
-      let request_record = "Lmaoez@gmail.com";
-      console.log("URL", request_urls);
-      console.log("METHOD", request_method);
-
-      try {
-        if (request_record != "") {
-          console.log("RECORD", request_record)
-
-          let logging = await strapi.db.query('plugin::netcore.netcorelog').create({
-            data: {
-              record: request_record,
-              method: request_method,
-              url: request_urls
-            }
-          });
-
-          console.log("DATA:", logging)
-        } else {
-          console.log("METHOD does not execute")
-        }
-      } catch (error) {
-        console.error(error);
-      }
+      let request_record = "truc.nguyen@akadigital.vn";
+      // console.log("URL", request_urls);
+      // console.log("METHOD", request_method);
 
       //string
       let data_body = ctx.request.body.data;
-      console.log("data_body:", data_body);
-      console.log("typeof body:", typeof data_body);
+      // console.log("data_body:", data_body);
+      // console.log("typeof body:", typeof data_body);
 
       //object
       let data = JSON.parse(data_body);
-      console.log("data:", data);
-      console.log("typeof data:", typeof data);
-      console.log("data length:", data.mkt_prudential.length);
+      // console.log("data:", data);
+      // console.log("typeof data:", typeof data);
+      // console.log("data length:", data.mkt_prudential.length);
 
       //loop through response and store data to Lead content-type
-      let email = [];
-      let full_name = [];
-      let mobile = [];
+      let Email = [];
+      let Mobile = [];
+      let Full_Name = [];
+      let First_Name = [];
+      let Last_Name = [];
+      let City = [];
+      let Zalo_OA_ID = [];
+      let FB_ID = [];
+      let Gender = [];
+      let Address = [];
+      let Marriage_Status = [];
+      let Age = [];
+      let DOB = [];
+      let Zalo_Followed_At = [];
+      let Zalo_Unfollowed_At = [];
+      let APPTDTE = [];
+      let Last_Call = [];
+      let Zalo_OA_Name = [];
+      let Zalo_OA_Status = [];
+      let Place_of_Work = [];
+      let Year_of_Experience = [];
+      let Career = [];
+      let Academic_Level = [];
+      let Lead_Status = [];
+      let Product_Like = [];
+      let Call_Result = [];
+      let Appointment_Date = [];
+      let Appointment_Time = [];
+      let Contract = [];
+      let Support_Status = [];
+      let Lead_Source = [];
+      let Submitted_Date = [];
       let journey_name = [];
       for (let i = 0; i < data.mkt_prudential.length; i++) {
-        email = data.mkt_prudential[i].att_params.EMAIL;
-        full_name = data.mkt_prudential[i].att_params.FULL_NAME;
-        mobile = data.mkt_prudential[i].att_params.MOBILE;
+        Email = data.mkt_prudential[i].att_params.EMAIL;
+        Mobile = data.mkt_prudential[i].att_params.MOBILE;
+        Full_Name = data.mkt_prudential[i].att_params.FULL_NAME;
+        First_Name = data.mkt_prudential[i].att_params.FIRST_NAME;
+        Last_Name = data.mkt_prudential[i].att_params.LAST_NAME;
+        City = data.mkt_prudential[i].att_params.CITY;
+        Zalo_OA_ID = data.mkt_prudential[i].att_params.ZALO_OA_ID;
+        FB_ID = data.mkt_prudential[i].att_params.FB_ID;
+        Gender = data.mkt_prudential[i].att_params.GENDER;
+        Address = data.mkt_prudential[i].att_params.ADDRESS;
+        Marriage_Status = data.mkt_prudential[i].att_params.MARRIAGE_STATUS;
+        Age = data.mkt_prudential[i].att_params.AGE;
+        DOB = data.mkt_prudential[i].att_params.DATE_OF_BIRTH;
+        Zalo_Followed_At = data.mkt_prudential[i].att_params.ZALO_FOLLOWED_AT;
+        Zalo_Unfollowed_At = data.mkt_prudential[i].att_params.ZALO_UNFOLLOWED_AT;
+        APPTDTE = data.mkt_prudential[i].att_params.APPTDTE;
+        Last_Call = data.mkt_prudential[i].att_params.LAST_CALL;
+        Zalo_OA_Name = data.mkt_prudential[i].att_params.ZALO_OA_NAME;
+        Zalo_OA_Status = data.mkt_prudential[i].att_params.ZALO_OA_STATUS;
+        Place_of_Work = data.mkt_prudential[i].att_params.PLACE_OF_WORK;
+        Year_of_Experience = data.mkt_prudential[i].att_params.YEAR_OF_EXPERIENCE;
+        Career = data.mkt_prudential[i].att_params.CAREER;
+        Academic_Level = data.mkt_prudential[i].att_params.ACADEMIC_LEVEL;
+        Lead_Status = data.mkt_prudential[i].att_params.LEAD_STATUS;
+        Product_Like = data.mkt_prudential[i].att_params.PRODUCT_LIKE;
+        Call_Result = data.mkt_prudential[i].att_params.CALL_RESULT;
+        Appointment_Date = data.mkt_prudential[i].att_params.APPOINTMENT_DATE;
+        Appointment_Time = data.mkt_prudential[i].att_params.APPOINTMENT_DATE;
+        Contract = data.mkt_prudential[i].att_params.CONTRACT;
+        Support_Status = data.mkt_prudential[i].att_params.SUPPORT_STATUS;
+        Lead_Source = data.mkt_prudential[i].att_params.LEAD_SOURCE;
+        Submitted_Date = data.mkt_prudential[i].att_params.SUBMITTED_DATE;
         journey_name = data.mkt_prudential[i].journey_name;
 
-        console.log("Email:", email);
-        console.log("Full Name:", full_name);
-        console.log("Phone:", mobile);
-        console.log("Journey Name:", journey_name);
+        // console.log("Email:", email);
+        // console.log("Full Name:", full_name);
+        // console.log("Phone:", mobile);
+        // console.log("Journey Name:", journey_name);
+
+        try {
+          if (request_record != "") {
+            //console.log("RECORD", request_record)
+
+            let logging = await strapi.db.query('plugin::netcore.netcorelog').create({
+              data: {
+                record: request_record,
+                method: request_method,
+                url: request_urls,
+                email: email,
+                mobile: mobile
+              }
+            });
+
+            console.log("DATA:", logging)
+          } else {
+            console.log("METHOD does not execute")
+          }
+        } catch (error) {
+          console.error(error);
+        }
 
         try {
           if (mobile != "") {
             let entry = await strapi.db.query('plugin::netcore.netcorelead').create({
               data: {
-                Email: email,
-                Phone: mobile,
-                Full_Name: full_name,
+                Email: Email,
+                Mobile: Mobile,
+                Full_Name: Full_Name,
                 Journey_Name: journey_name,
                 isGet: false,
                 Source: "Netcore Smartech"
@@ -150,11 +210,41 @@ module.exports = {
             let data = JSON.stringify(
               {
                 body: {
-                  webhook_name: 'AKA_CUSTOM_APP',
+                  webhook_name: 'AKA_WEBHOOK',
+                  journey_name: journey_name,
                   attributesExt: {
-                    MOBILE: mobile,
-                    EMAIL: email,
-                    FULL_NAME: full_name
+                    MOBILE: Mobile,
+                    EMAIL: Email,
+                    FULL_NAME: Full_Name,
+                    FIRST_NAME: First_Name,
+                    LAST_NAME: Last_Name,
+                    CITY: City,
+                    ZALO_OA_ID: Zalo_OA_ID,
+                    FB_ID: FB_ID,
+                    GENDER: Gender,
+                    ADDRESS: Address,
+                    MARRIAGE_STATUS: Marriage_Status,
+                    AGE: Age,
+                    DATE_OF_BIRTH: DOB,
+                    ZALO_FOLLOWED_AT: Zalo_Followed_At,
+                    ZALO_UNFOLLOWED_AT: Zalo_Unfollowed_At,
+                    APPTDTE: APPTDTE,
+                    LAST_CALL: Last_Call,
+                    ZALO_OA_NAME: Zalo_OA_Name,
+                    ZALO_OA_STATUS: Zalo_OA_Status,
+                    PLACE_OF_WORK: Place_of_Work,
+                    YEAR_OF_EXPERIENCE: Year_of_Experience,
+                    CAREER: Career,
+                    ACADEMIC_LEVEL: Academic_Level,
+                    LEAD_STATUS: Lead_Status,
+                    PRODUCT_LIKE: Product_Like,
+                    CALL_RESULT: Call_Result,
+                    APPOINTMENT_DATE: Appointment_Date,
+                    APPOINTMENT_DATE: Appointment_Time,
+                    CONTRACT: Contract,
+                    SUPPORT_STATUS: Support_Status,
+                    LEAD_SOURCE: Lead_Source,
+                    SUBMITTED_DATE: Submitted_Date
                   }
                 },
                 authenRequestForm: {
