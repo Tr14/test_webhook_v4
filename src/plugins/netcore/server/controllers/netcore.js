@@ -133,7 +133,7 @@ module.exports = {
       let Lead_Source = [];
       let Submitted_Date = [];
       let journey_name = [];
-      let web_message_name = [];
+      let list_name = [];
       for (let i = 0; i < data.mkt_prudential.length; i++) {
         Email = data.mkt_prudential[i].att_params.EMAIL;
         Mobile = data.mkt_prudential[i].att_params.MOBILE;
@@ -168,7 +168,7 @@ module.exports = {
         Lead_Source = data.mkt_prudential[i].att_params.LEAD_SOURCE;
         Submitted_Date = data.mkt_prudential[i].att_params.SUBMITTED_DATE;
         journey_name = data.mkt_prudential[i].custom_params.Journey_Name;
-
+        list_name = data.mkt_prudential[i].custom_params.List_Name;
         // console.log("Email:", Email);
         // console.log("Full Name:", full_name);
         // console.log("Mobile:", Mobile);
@@ -204,6 +204,7 @@ module.exports = {
                 Mobile: Mobile,
                 Full_Name: Full_Name,
                 Journey_Name: journey_name,
+                List_Name: list_name,
                 isGet: false,
                 Source: "Netcore Smartech"
               }
@@ -214,6 +215,7 @@ module.exports = {
                 body: {
                   webhook_name: 'AKA_WEBHOOK',
                   journey_name: journey_name,
+                  list_name: list_name,
                   attributesExt: {
                     xMOBILE: Mobile,
                     xEMAIL: Email,
