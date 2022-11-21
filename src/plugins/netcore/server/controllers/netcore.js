@@ -61,7 +61,6 @@ module.exports = {
     console.log(ctx.request.header);
     ctx.body = "AKADIGITAL"
 
-    /*
     var basic_auth_panel = Buffer.from(ctx.request.header.authorization.split(" ")[1], 'base64').toString();
     console.log("Basic Auth Request:", basic_auth_panel)
 
@@ -199,6 +198,18 @@ module.exports = {
 
         try {
           if (Mobile != "") {
+            let entry = await strapi.db.query('plugin::netcore.netcorelead').create({
+              data: {
+                Email: Email,
+                Mobile: Mobile,
+                Full_Name: Full_Name,
+                Journey_Name: journey_name,
+                List_Name: list_name,
+                isGet: false,
+                Source: "Netcore Smartech"
+              }
+            });
+
             let data = JSON.stringify(
               {
                 body: {
@@ -285,7 +296,6 @@ module.exports = {
     } else {
       ctx.body = "User is not exist"
     }
-    */
   },
 
   async customApi(ctx) {
