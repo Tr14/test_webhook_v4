@@ -84,7 +84,7 @@ module.exports = {
       //Logging
       let request_urls = ctx.request.url;
       let request_method = ctx.request.method;
-      let request_record = "truc.nguyen@akadigital.vn";
+      let request_record = ctx.request["x-forwarded-for"];
       // console.log("URL", request_urls);
       // console.log("METHOD", request_method);
 
