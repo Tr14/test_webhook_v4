@@ -167,9 +167,9 @@ module.exports = {
         Submitted_Date = data.mkt_prudential[i].att_params.SUBMITTED_DATE;
         journey_name = data.mkt_prudential[i].journey_name;
 
-        // console.log("Email:", email);
+        // console.log("Email:", Email);
         // console.log("Full Name:", full_name);
-        // console.log("Phone:", mobile);
+        // console.log("Mobile:", Mobile);
         // console.log("Journey Name:", journey_name);
 
         try {
@@ -181,8 +181,8 @@ module.exports = {
                 record: request_record,
                 method: request_method,
                 url: request_urls,
-                email: email,
-                mobile: mobile
+                email: Email,
+                mobile: Mobile
               }
             });
 
@@ -195,7 +195,7 @@ module.exports = {
         }
 
         try {
-          if (mobile != "") {
+          if (Mobile != "") {
             let entry = await strapi.db.query('plugin::netcore.netcorelead').create({
               data: {
                 Email: Email,
