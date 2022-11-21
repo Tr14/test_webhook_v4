@@ -167,7 +167,6 @@ module.exports = {
         Support_Status = data.mkt_prudential[i].att_params.SUPPORT_STATUS;
         Lead_Source = data.mkt_prudential[i].att_params.LEAD_SOURCE;
         Submitted_Date = data.mkt_prudential[i].att_params.SUBMITTED_DATE;
-        web_message_name = data.mkt_prudential[i].custom_params.Web_Message;
         journey_name = data.mkt_prudential[i].custom_params.Journey_Name;
 
         // console.log("Email:", Email);
@@ -215,40 +214,39 @@ module.exports = {
                 body: {
                   webhook_name: 'AKA_WEBHOOK',
                   journey_name: journey_name,
-                  web_message_name: web_message_name,
                   attributesExt: {
-                    MOBILE: Mobile,
-                    EMAIL: Email,
-                    FULL_NAME: Full_Name,
-                    FIRST_NAME: First_Name,
-                    LAST_NAME: Last_Name,
-                    CITY: City,
-                    ZALO_OA_ID: Zalo_OA_ID,
-                    FB_ID: FB_ID,
-                    GENDER: Gender,
-                    ADDRESS: Address,
-                    MARRIAGE_STATUS: Marriage_Status,
-                    AGE: Age,
-                    DATE_OF_BIRTH: DOB,
-                    ZALO_FOLLOWED_AT: Zalo_Followed_At,
-                    ZALO_UNFOLLOWED_AT: Zalo_Unfollowed_At,
-                    APPTDTE: APPTDTE,
-                    LAST_CALL: Last_Call,
-                    ZALO_OA_NAME: Zalo_OA_Name,
-                    ZALO_OA_STATUS: Zalo_OA_Status,
-                    PLACE_OF_WORK: Place_of_Work,
-                    YEAR_OF_EXPERIENCE: Year_of_Experience,
-                    CAREER: Career,
-                    ACADEMIC_LEVEL: Academic_Level,
-                    LEAD_STATUS: Lead_Status,
-                    PRODUCT_LIKE: Product_Like,
+                    xMOBILE: Mobile,
+                    xEMAIL: Email,
+                    xFULL_NAME: Full_Name,
+                    xFIRST_NAME: First_Name,
+                    xLAST_NAME: Last_Name,
+                    xCITY: City,
+                    xZALO_OA_ID: Zalo_OA_ID,
+                    xFB_ID: FB_ID,
+                    xGENDER: Gender,
+                    xADDRESS: Address,
+                    xMARRIAGE_STATUS: Marriage_Status,
+                    xAGE: Age,
+                    xDATE_OF_BIRTH: DOB,
+                    xZALO_FOLLOWED_AT: Zalo_Followed_At,
+                    xZALO_UNFOLLOWED_AT: Zalo_Unfollowed_At,
+                    xAPPTDTE: APPTDTE,
+                    xLAST_CALL: Last_Call,
+                    xZALO_OA_NAME: Zalo_OA_Name,
+                    xZALO_OA_STATUS: Zalo_OA_Status,
+                    xPLACE_OF_WORK: Place_of_Work,
+                    xYEAR_OF_EXPERIENCE: Year_of_Experience,
+                    xCAREER: Career,
+                    xACADEMIC_LEVEL: Academic_Level,
+                    xLEAD_STATUS: Lead_Status,
+                    xPRODUCT_LIKE: Product_Like,
                     CALL_RESULT: Call_Result,
-                    APPOINTMENT_DATE: Appointment_Date,
-                    APPOINTMENT_DATE: Appointment_Time,
-                    CONTRACT: Contract,
-                    SUPPORT_STATUS: Support_Status,
-                    LEAD_SOURCE: Lead_Source,
-                    SUBMITTED_DATE: Submitted_Date
+                    xAPPOINTMENT_DATE: Appointment_Date,
+                    xAPPOINTMENT_DATE: Appointment_Time,
+                    xCONTRACT: Contract,
+                    xSUPPORT_STATUS: Support_Status,
+                    xLEAD_SOURCE: Lead_Source,
+                    xSUBMITTED_DATE: Submitted_Date
                   }
                 },
                 authenRequestForm: {
@@ -270,8 +268,6 @@ module.exports = {
                 isCCE: false
               }
             );
-
-            console.log("PRU POST DATA", data);
 
             const config = {
               method: 'POST',
