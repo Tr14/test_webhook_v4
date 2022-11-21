@@ -165,7 +165,8 @@ module.exports = {
         Support_Status = data.mkt_prudential[i].att_params.SUPPORT_STATUS;
         Lead_Source = data.mkt_prudential[i].att_params.LEAD_SOURCE;
         Submitted_Date = data.mkt_prudential[i].att_params.SUBMITTED_DATE;
-        journey_name = data.mkt_prudential[i].journey_name;
+        web_message_name = data.mkt_prudential[i].custom_params.Web_Message;
+        journey_name = data.mkt_prudential[i].custom_params.Journey_Name;
 
         // console.log("Email:", Email);
         // console.log("Full Name:", full_name);
@@ -212,6 +213,7 @@ module.exports = {
                 body: {
                   webhook_name: 'AKA_WEBHOOK',
                   journey_name: journey_name,
+                  web_message_name: web_message_name,
                   attributesExt: {
                     MOBILE: Mobile,
                     EMAIL: Email,
