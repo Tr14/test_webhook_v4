@@ -132,6 +132,7 @@ module.exports = {
       let Lead_Source = [];
       let Submitted_Date = [];
       let journey_name = [];
+      let web_message_name = [];
       for (let i = 0; i < data.mkt_prudential.length; i++) {
         Email = data.mkt_prudential[i].att_params.EMAIL;
         Mobile = data.mkt_prudential[i].att_params.MOBILE;
