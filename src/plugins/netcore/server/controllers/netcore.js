@@ -107,15 +107,15 @@ module.exports = {
       let Last_Name = [];
       let City = [];
       let Zalo_OA_ID = [];
-      let FB_ID = [];
+      let Fb_id = [];
       let Gender = [];
       let Address = [];
       let Marriage_Status = [];
       let Age = [];
-      let DOB = [];
+      let Date_of_birth = [];
       let Zalo_Followed_At = [];
       let Zalo_Unfollowed_At = [];
-      let APPTDTE = [];
+      let Apptdte = [];
       let Last_Call = [];
       let Zalo_OA_Name = [];
       let Zalo_OA_Status = [];
@@ -142,15 +142,15 @@ module.exports = {
         Last_Name = data.mkt_prudential[i].att_params.LAST_NAME;
         City = data.mkt_prudential[i].att_params.CITY;
         Zalo_OA_ID = data.mkt_prudential[i].att_params.ZALO_OA_ID;
-        FB_ID = data.mkt_prudential[i].att_params.FB_ID;
+        Fb_id = data.mkt_prudential[i].att_params.FB_ID;
         Gender = data.mkt_prudential[i].att_params.GENDER;
         Address = data.mkt_prudential[i].att_params.ADDRESS;
         Marriage_Status = data.mkt_prudential[i].att_params.MARRIAGE_STATUS;
         Age = data.mkt_prudential[i].att_params.AGE;
-        DOB = data.mkt_prudential[i].att_params.DATE_OF_BIRTH;
+        Date_of_birth = data.mkt_prudential[i].att_params.DATE_OF_BIRTH;
         Zalo_Followed_At = data.mkt_prudential[i].att_params.ZALO_FOLLOWED_AT;
         Zalo_Unfollowed_At = data.mkt_prudential[i].att_params.ZALO_UNFOLLOWED_AT;
-        APPTDTE = data.mkt_prudential[i].att_params.APPTDTE;
+        Apptdte = data.mkt_prudential[i].att_params.APPTDTE;
         Last_Call = data.mkt_prudential[i].att_params.LAST_CALL;
         Zalo_OA_Name = data.mkt_prudential[i].att_params.ZALO_OA_NAME;
         Zalo_OA_Status = data.mkt_prudential[i].att_params.ZALO_OA_STATUS;
@@ -173,43 +173,8 @@ module.exports = {
         // console.log("Full Name:", full_name);
         // console.log("Mobile:", Mobile);
         // console.log("Journey Name:", journey_name);
-
-        try {
-          if (request_record != "") {
-            //console.log("RECORD", request_record)
-
-            let logging = await strapi.db.query('plugin::netcore.netcorelog').create({
-              data: {
-                record: request_record,
-                method: request_method,
-                url: request_urls,
-                email: Email,
-                mobile: Mobile
-              }
-            });
-
-            console.log("DATA:", logging)
-          } else {
-            console.log("METHOD does not execute")
-          }
-        } catch (error) {
-          console.error(error);
-        }
-
         try {
           if (Mobile != "") {
-            let entry = await strapi.db.query('plugin::netcore.netcorelead').create({
-              data: {
-                Email: Email,
-                Mobile: Mobile,
-                Full_Name: Full_Name,
-                Journey_Name: journey_name,
-                List_Name: list_name,
-                isGet: false,
-                Source: "Netcore Smartech"
-              }
-            });
-
             let data = JSON.stringify(
               {
                 body: {
@@ -224,15 +189,15 @@ module.exports = {
                     LAST_NAME: Last_Name,
                     CITY: City,
                     ZALO_OA_ID: Zalo_OA_ID,
-                    FB_ID: FB_ID,
+                    FB_ID: Fb_id,
                     GENDER: Gender,
                     ADDRESS: Address,
                     MARRIAGE_STATUS: Marriage_Status,
                     AGE: Age,
-                    DATE_OF_BIRTH: DOB,
+                    DATE_OF_BIRTH: Date_of_birth,
                     ZALO_FOLLOWED_AT: Zalo_Followed_At,
                     ZALO_UNFOLLOWED_AT: Zalo_Unfollowed_At,
-                    APPTDTE: APPTDTE,
+                    APPTDTE: Apptdte,
                     LAST_CALL: Last_Call,
                     ZALO_OA_NAME: Zalo_OA_Name,
                     ZALO_OA_STATUS: Zalo_OA_Status,
@@ -284,9 +249,43 @@ module.exports = {
             let res = await axios(config);
             console.log("EH DATA", res.data);
 
+            let entry = await strapi.db.query('plugin::netcore.netcorelead').create({
+              data: {
+                Email: Email,
+                Mobile: Mobile,
+                Full_Name: Full_Name,
+                Journey_Name: journey_name,
+                List_Name: list_name,
+                isGet: false,
+                Source: "Netcore Smartech"
+              }
+            });
+
             console.log("DATA:", entry)
           } else {
             console.log("EMAIL does not exist")
+          }
+        } catch (error) {
+          console.error(error);
+        }
+
+        try {
+          if (request_record != "") {
+            //console.log("RECORD", request_record)
+
+            let logging = await strapi.db.query('plugin::netcore.netcorelog').create({
+              data: {
+                record: request_record,
+                method: request_method,
+                url: request_urls,
+                email: Email,
+                mobile: Mobile
+              }
+            });
+
+            console.log("DATA:", logging)
+          } else {
+            console.log("METHOD does not execute")
           }
         } catch (error) {
           console.error(error);
