@@ -55,11 +55,62 @@ if (cluster.isMaster) {
 
 const axios = require('axios');
 
+var crypto = require('crypto');
+
+function getAlgorithm(keyBase64) {
+
+  var key = Buffer.from(keyBase64, 'base64');
+  switch (key.length) {
+    case 16:
+      console.log("Key:", key);
+      console.log("Key.lenght:", key.length);
+      return 'aes-128-cbc';
+    case 32:
+      console.log("Key:", key);
+      console.log("Key.lenght:", key.length);
+      return 'aes-256-cbc';
+
+  }
+
+  throw new Error('Invalid key length: ' + key.length);
+}
+
+
+function encrypt(plainText, keyBase64, ivBase64) {
+
+  const key = Buffer.from(keyBase64, 'base64');
+  const iv = Buffer.from(ivBase64, 'base64');
+
+  const cipher = crypto.createCipheriv(getAlgorithm(keyBase64), key, iv);
+  let encrypted = cipher.update(plainText, 'utf8', 'base64')
+  encrypted += cipher.final('base64');
+  return encrypted;
+};
+
+function decrypt(messagebase64, keyBase64, ivBase64) {
+
+  const key = Buffer.from(keyBase64, 'base64');
+  const iv = Buffer.from(ivBase64, 'base64');
+
+  const decipher = crypto.createDecipheriv(getAlgorithm(keyBase64), key, iv);
+  let decrypted = decipher.update(messagebase64, 'base64');
+  decrypted += decipher.final();
+  return decrypted;
+}
+
 module.exports = {
   async send(ctx) {
     console.log(ctx.request.body);
     console.log(ctx.request.header);
     ctx.body = "AKADIGITAL"
+
+    /*
+    var key = crypto.randomBytes(32).toString('base64');
+    var iv = crypto.randomBytes(16).toString('base64');
+    console.log(key)
+    console.log(iv)
+    */
+
 
     var basic_auth_panel = Buffer.from(ctx.request.header.authorization.split(" ")[1], 'base64').toString();
     console.log("Basic Auth Request:", basic_auth_panel)
@@ -79,8 +130,6 @@ module.exports = {
     console.log("Compare:", check);
 
     if (check == true) {
-      ctx.body = "Welcome to AKA Netcore Webhook"
-
       //Logging
       let request_urls = ctx.request.url;
       let request_method = ctx.request.method;
@@ -235,6 +284,18 @@ module.exports = {
               }
             );
 
+            var keyBase64 = "tY07Oxj6CvV/y3u9B3fVxWRCR3FCyK3D88gjLL3y7a0=";
+            var ivBase64 = 'UyakdboiHH3Cgn0J7DTiLA==';
+            var plainText = data;
+
+            var cipherText = encrypt(plainText, keyBase64, ivBase64);
+            var decryptedCipherText = decrypt(cipherText, keyBase64, ivBase64);
+
+            console.log('Algorithm: ' + getAlgorithm(keyBase64));
+            console.log('Plaintext: ' + plainText);
+            console.log('Ciphertext: ' + cipherText);
+            console.log('Decoded Ciphertext: ' + decryptedCipherText);
+
             const config = {
               method: 'POST',
               url: 'https://ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net/dev-cdp/messages',
@@ -243,7 +304,7 @@ module.exports = {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Host': 'ehn-vnlife-uat-az2-hfnhse-premium01.servicebus.windows.net'
               },
-              data: data
+              data: cipherText
             }
 
             let res = await axios(config);
