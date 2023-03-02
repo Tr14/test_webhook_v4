@@ -43,6 +43,10 @@
         "platform": {
             "type": "string",
             "maxLentgh": 50
+        },
+        "status": {
+            "type": "string",
+            "maxLentgh": 10
         }
     }
 }
