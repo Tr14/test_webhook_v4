@@ -19,4 +19,9 @@ module.exports = {
         enabled: true,
         resolve: './src/plugins/netcore'
     },
+
+    'firebasetoken': {
+        enabled: true,
+        resolve: './src/plugins/firebasetoken'
+    },
 }

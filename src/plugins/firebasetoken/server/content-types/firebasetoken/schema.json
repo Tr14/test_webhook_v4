@@ -1,0 +1,48 @@
+{
+    "kind": "collectionType",
+    "collectionName": "firebasetokens",
+    "info": {
+        "singularName": "firebasetoken",
+        "pluralName": "firebasetokens",
+        "displayName": "Firebase Token"
+    },
+    "options": {
+        "draftAndPublish": false,
+        "comment": ""
+    },
+    "pluginOptions": {
+        "content-manager": {
+            "visible": true
+        },
+        "content-type-builder": {
+            "visible": true
+        }
+    },
+    "attributes": {
+        "record": {
+            "type": "string",
+            "required": true,
+            "maxLentgh": 100
+        },
+        "token": {
+            "type": "string",
+            "maxLentgh": 500
+        },
+        "deviceID": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "deviceName": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "deviceOS": {
+            "type": "string",
+            "maxLentgh": 50
+        },
+        "platform": {
+            "type": "string",
+            "maxLentgh": 50
+        }
+    }
+}
