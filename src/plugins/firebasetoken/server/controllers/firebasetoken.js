@@ -16,12 +16,12 @@ module.exports = ({ strapi }) => ({
     let status = [];
 
     for (let i = 0; i < data_body.length; i++) {
-      token = data[i].Token;
-      deviceID = data[i].DeviceID;
-      deviceName = data[i].DeviceName;
-      deviceOS = data[i].DeviceOS;
-      platform = data[i].Platform;
-      status = data[i].Status;
+      token = data_body[i].Token;
+      deviceID = data_body[i].DeviceID;
+      deviceName = data_body[i].DeviceName;
+      deviceOS = data_body[i].DeviceOS;
+      platform = data_body[i].Platform;
+      status = data_body[i].Status;
 
       let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
         data: {
