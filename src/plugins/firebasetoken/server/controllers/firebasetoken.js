@@ -4,7 +4,9 @@ module.exports = ({ strapi }) => ({
   async sendToken(ctx) {
     ctx.body = "AKADIGITAL"
 
-    let data_body = ctx.request.body;
+    let data_body = ctx.response.body;
+
+    console.log(data_body)
 
     let token = [];
     let deviceID = [];
