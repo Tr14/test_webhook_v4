@@ -6,9 +6,7 @@ module.exports = ({ strapi }) => ({
 
     let data_body = ctx.request.body.data;
 
-    let data = JSON.parse(JSON.stringify(data_body));
-
-    console.log(data)
+    console.log(data_body)
 
     let token = [];
     let deviceID = [];
@@ -17,7 +15,7 @@ module.exports = ({ strapi }) => ({
     let platform = [];
     let status = [];
 
-    for (let i = 0; i < data.responsys.length; i++) {
+    for (let i = 0; i < data_body.responsys.length; i++) {
       token = data[i].Token;
       deviceID = data[i].DeviceID;
       deviceName = data[i].DeviceName;
