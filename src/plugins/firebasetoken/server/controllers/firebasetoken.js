@@ -4,7 +4,7 @@ module.exports = ({ strapi }) => ({
   async sendToken(ctx) {
     ctx.body = "AKADIGITAL"
 
-    let data_body = ctx.request.body.data;
+    let data_body = ctx.request.body.responsys;
 
     console.log(data_body)
 
