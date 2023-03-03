@@ -8,7 +8,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(data_body);
 
-    let data = JSON.stringify(data_body);
+    let data = JSON.parse(JSON.stringify(data_body));
 
     console.log(data);
 
