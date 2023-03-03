@@ -39,8 +39,8 @@ module.exports = ({ strapi }) => ({
 
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
-        deviceID: {
-          $notNull: true,
+        status: {
+          $eq: "Live",
         },
       },
     });
