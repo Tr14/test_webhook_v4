@@ -8,11 +8,7 @@ module.exports = ({ strapi }) => ({
 
     var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
 
-    console.log(eventstring);
-
     var data = JSON.parse(eventstring);
-
-    console.log(data);
 
     let deviceID = [];
     let token = [];
@@ -52,16 +48,10 @@ module.exports = ({ strapi }) => ({
 
     var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
 
-    console.log(eventstring);
-
     var data = JSON.parse(eventstring);
-
-    console.log(data);
 
     userIdentified = data.userIdentified;
     deviceID = data.DeviceID;
-
-    console.log(deviceID)
 
     await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
       where: {
