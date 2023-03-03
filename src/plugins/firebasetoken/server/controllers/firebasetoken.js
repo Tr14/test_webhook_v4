@@ -4,21 +4,15 @@ module.exports = ({ strapi }) => ({
   async sendToken(ctx) {
     ctx.body = "AKADIGITAL"
 
-    try {
-      // Parse a JSON
-      var validJSON = null;
+    var validJSON = ctx.request.body;
 
-      var validJSON = ctx.request.body.json();
+    var removeQuote = validJSON.replace(/["']/g, "");
 
-      console.log("TRY", validJSON);
+    console.log(removeQuote)
 
-    } catch (e) {
-      // You can read e for more info
-      // Let's assume the error is that we already have parsed the payload
-      // So just return that
+    var data = removeQuote.json();
 
-      console.log("CATCH", validJSON);
-    }
+    console.log(data);
 
     let token = [];
     //let deviceID = [];
