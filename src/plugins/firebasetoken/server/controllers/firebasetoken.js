@@ -6,11 +6,15 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = ctx.request.body;
 
-    console.log(validJSON)
+    console.log("ORIGINAL DATA", validJSON)
 
-    var data = JSON.parse(validJSON);
+    var dataString = JSON.stringify(validJSON)
 
-    console.log(data);
+    console.log("STRING DATA", dataString)
+
+    var data = JSON.parse(dataString);
+
+    console.log("JSON DATA", data);
 
     let token = [];
     //let deviceID = [];
