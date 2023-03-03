@@ -40,20 +40,13 @@ module.exports = ({ strapi }) => ({
 
   async getToken(ctx) {
     ctx.body = "Get Token Success";
-
-    console.log(ctx)
-
-    const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
-      where: {
-        deviceID: "82a34c5123083499",
-      },
-    });
   },
 
   async updateUser(ctx) {
     ctx.body = "Update User Identify Success";
 
     let userIdentified = [];
+    let deviceID = [];
 
     var validJSON = ctx.request.body;
 
@@ -66,10 +59,11 @@ module.exports = ({ strapi }) => ({
     console.log(data);
 
     userIdentified = data.userIdentified
+    deviceID = data.DeviceID;
 
     await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
       where: {
-        deviceID: "82a34c5123083499",
+        deviceID: deviceID,
       },
       data: {
         userIdentified: userIdentified,
