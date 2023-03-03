@@ -12,11 +12,15 @@ module.exports = ({ strapi }) => ({
 
       var data = JSON.parse(validJSON);
 
+      console.log("TRY", data);
+
     } catch (e) {
       // You can read e for more info
       // Let's assume the error is that we already have parsed the payload
       // So just return that
       data = validJSON;
+
+      console.log("CATCH", data);
     }
 
     let token = [];
