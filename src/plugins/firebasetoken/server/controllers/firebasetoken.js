@@ -6,7 +6,7 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = '{"responsys": [{"Token": "cQFsmNMUTkyY212n"]}';
 
-    console.log(validJSON)
+    console.log(validJSON.responsys)
 
     var data = JSON.parse(validJSON);
 
