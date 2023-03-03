@@ -58,8 +58,10 @@ module.exports = ({ strapi }) => ({
 
     console.log(data);
 
-    userIdentified = data.userIdentified
+    userIdentified = data.userIdentified;
     deviceID = data.DeviceID;
+
+    console.log(deviceID)
 
     await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
       where: {
