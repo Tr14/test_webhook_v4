@@ -10,7 +10,7 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = '{"responsys": [{"Token": "cQFsmNMUTkyY212n"]}';
 
-    console.log(validJSON);
+    var data = JSON.parse(validJSON)
 
     let token = [];
     //let deviceID = [];
@@ -19,8 +19,8 @@ module.exports = ({ strapi }) => ({
     //let platform = [];
     //let status = [];
 
-    for (let i = 0; i < validJSON.responsys.length; i++) {
-      token = validJSON.responsys[i].Token;
+    for (let i = 0; i < data.responsys.length; i++) {
+      token = data.responsys[i].Token;
       //deviceID = data_body[i].DeviceID;
       //deviceName = data_body[i].DeviceName;
       //deviceOS = data_body[i].DeviceOS;
