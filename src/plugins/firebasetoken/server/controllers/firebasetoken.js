@@ -4,15 +4,13 @@ module.exports = ({ strapi }) => ({
   async sendToken(ctx) {
     ctx.body = "AKADIGITAL"
 
-    var validJSON = ctx.request.body;
+    var validJSON = '{"responsys": [{"Token": "LMAOEZ"}, {"Token": "1"}]}';
 
-    var afterJSON = validJSON.replace(/["']/g, "");
+    console.log(validJSON)
 
-    console.log("ORIGINAL DATA", afterJSON)
+    var data = JSON.parse(validJSON);
 
-    var data = JSON.parse(afterJSON);
-
-    console.log("JSON DATA", data);
+    console.log(data);
 
     let token = [];
     //let deviceID = [];
