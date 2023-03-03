@@ -37,7 +37,7 @@ module.exports = ({ strapi }) => ({
   async getToken(ctx) {
     ctx.body = "Get Token Success";
 
-    const entry = await strapi.db.query('api::article.article').findMany({
+    const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
         deviceID: {
           $notNull: true,
