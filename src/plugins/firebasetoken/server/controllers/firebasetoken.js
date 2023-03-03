@@ -55,7 +55,7 @@ module.exports = ({ strapi }) => ({
 
     var data = JSON.stringify(entry);
 
-    ctx.body = data;
+    ctx.body = data[0].deviceID;
   },
 
   async updateRecord(ctx) {
