@@ -46,17 +46,13 @@ module.exports = ({ strapi }) => ({
   },
 
   async getToken(ctx) {
-    ctx.body = "GET TOKEN"
-
-    var data = ctx.response;
-
-    console.log(data);
-
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
         record: "82a34c5123083499",
       },
     });
+
+    console.log(entry);
   },
 
   async updateRecord(ctx) {
