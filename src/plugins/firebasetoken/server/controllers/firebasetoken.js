@@ -24,6 +24,8 @@ module.exports = ({ strapi }) => ({
 
     record = data.DeviceID;
     token = data.Token;
+
+    console.log(record)
     //deviceID = data_body[i].DeviceID;
     //deviceName = data_body[i].DeviceName;
     //deviceOS = data_body[i].DeviceOS;
