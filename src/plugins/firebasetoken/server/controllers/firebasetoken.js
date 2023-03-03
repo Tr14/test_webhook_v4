@@ -46,7 +46,7 @@ module.exports = ({ strapi }) => ({
   },
 
   async getToken(ctx) {
-    ctx.body = "Get Token Success";
+    ctx.body = entry;
 
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
