@@ -16,30 +16,24 @@ module.exports = ({ strapi }) => ({
 
     let deviceID = [];
     let token = [];
-    //let deviceID = [];
-    //let deviceName = [];
-    //let deviceOS = [];
-    //let platform = [];
-    //let status = [];
+    let deviceName = [];
+    let deviceOS = [];
+    let platform = [];
 
     deviceID = data.DeviceID;
     token = data.Token;
-
-    //deviceID = data_body[i].DeviceID;
-    //deviceName = data_body[i].DeviceName;
-    //deviceOS = data_body[i].DeviceOS;
-    //platform = data_body[i].Platform;
-    //status = data_body[i].Status;
+    deviceName = data.DeviceName;
+    deviceOS = data.DeviceOS;
+    platform = data.Platform;
 
     let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
       data: {
         deviceID: deviceID,
         token: token,
-        //deviceID: deviceID,
-        //deviceName: deviceName,
-        //deviceOS: deviceOS,
-        //platform: platform,
-        //status: status
+        deviceOS: deviceOS,
+        deviceName: deviceName,
+        platform: platform,
+        status: "Live"
       }
     });
   },
