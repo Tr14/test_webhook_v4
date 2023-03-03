@@ -10,7 +10,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(removeQuote)
 
-    var data = removeQuote.json();
+    var data = removeQuote.toString();
 
     console.log(data);
 
