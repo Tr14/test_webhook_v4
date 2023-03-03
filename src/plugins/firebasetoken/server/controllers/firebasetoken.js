@@ -44,6 +44,8 @@ module.exports = ({ strapi }) => ({
         },
       },
     });
+
+    console.log(entry);
   },
 
   async updateUser(ctx) {
