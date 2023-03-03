@@ -41,19 +41,8 @@ module.exports = ({ strapi }) => ({
   async getToken(ctx) {
     ctx.body = "Get Token Success";
 
-    var validJSON = ctx.request.body;
+    console.log(ctx)
 
-    console.log(validJSON)
-
-    var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
-
-    console.log(eventstring);
-
-    var data = JSON.parse(eventstring);
-
-    console.log(data);
-
-    console.log(ctx.body)
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
         deviceID: "82a34c5123083499",
