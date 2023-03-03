@@ -53,7 +53,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(entry);
 
-    var data = JSON.parse(entry);
+    var data = JSON.stringify(entry);
 
     ctx.body = data;
   },
