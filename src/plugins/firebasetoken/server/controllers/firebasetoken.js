@@ -6,7 +6,7 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = '{"responsys": [{"Token": "cQFsmNMUTkyY212n"]}';
 
-    console.log(validJSON.responsys)
+    console.log(validJSON)
 
     var data = JSON.parse(validJSON);
 
@@ -19,6 +19,7 @@ module.exports = ({ strapi }) => ({
     //let platform = [];
     //let status = [];
 
+    /*
     for (let i = 0; i < data.responsys.length; i++) {
       token = data.responsys[i].Token;
       //deviceID = data_body[i].DeviceID;
@@ -39,6 +40,7 @@ module.exports = ({ strapi }) => ({
         }
       });
     };
+    */
   },
 
   async getToken(ctx) {
