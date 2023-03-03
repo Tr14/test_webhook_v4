@@ -8,7 +8,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(data_body);
 
-    let data = data_body.replace(/^"(.*)"$/, '$1');
+    let data = JSON.parse(data_body);
 
     console.log(data);
 
@@ -19,8 +19,8 @@ module.exports = ({ strapi }) => ({
     //let platform = [];
     //let status = [];
 
-    for (let i = 0; i < data.length; i++) {
-      token = data[i].Token;
+    for (let i = 0; i < data.responsys.length; i++) {
+      token = data.responsys[i].Token;
       //deviceID = data_body[i].DeviceID;
       //deviceName = data_body[i].DeviceName;
       //deviceOS = data_body[i].DeviceOS;
