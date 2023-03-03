@@ -6,13 +6,11 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = ctx.request.body;
 
-    console.log("ORIGINAL DATA", validJSON)
+    var afterJSON = validJSON.replace(/["']/g, "");
 
-    var dataString = JSON.stringify(validJSON)
+    console.log("ORIGINAL DATA", afterJSON)
 
-    console.log("STRING DATA", dataString)
-
-    var data = JSON.parse(dataString);
+    var data = JSON.parse(afterJSON);
 
     console.log("JSON DATA", data);
 
