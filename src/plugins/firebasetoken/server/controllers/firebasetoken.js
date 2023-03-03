@@ -6,7 +6,9 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = ctx.request.body;
 
-    console.log(validJSON)
+    var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
+
+    console.log(eventstring)
 
     var data = JSON.parse(validJSON);
 
