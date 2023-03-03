@@ -46,7 +46,7 @@ module.exports = ({ strapi }) => ({
   async getToken(ctx) {
     ctx.body = "GET TOKEN"
 
-    var data = ctx.body.response;
+    var data = ctx.response;
 
     console.log(data);
 
