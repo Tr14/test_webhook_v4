@@ -8,7 +8,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(validJSON)
 
-    var data = removeQuote.responsys;
+    var data = JSON.parse(validJSON);
 
     console.log(data);
 
