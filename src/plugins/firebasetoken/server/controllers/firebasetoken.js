@@ -22,7 +22,7 @@ module.exports = ({ strapi }) => ({
     //let platform = [];
     //let status = [];
 
-    record = data.data;
+    record = data.record;
     token = data.Token;
 
     console.log(record)
