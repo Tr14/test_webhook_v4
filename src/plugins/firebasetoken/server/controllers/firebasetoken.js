@@ -46,8 +46,6 @@ module.exports = ({ strapi }) => ({
   },
 
   async getToken(ctx) {
-    ctx.body = entry;
-
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
         record: "82a34c5123083499",
@@ -55,6 +53,8 @@ module.exports = ({ strapi }) => ({
     });
 
     console.log(entry);
+
+    ctx.body = entry;
   },
 
   async updateRecord(ctx) {
