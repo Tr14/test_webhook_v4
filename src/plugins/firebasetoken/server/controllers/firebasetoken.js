@@ -36,6 +36,14 @@ module.exports = ({ strapi }) => ({
 
   async getToken(ctx) {
     ctx.body = "Get Token Success";
+
+    const entry = await strapi.db.query('api::article.article').findMany({
+      where: {
+        deviceID: {
+          $notNull: true,
+        },
+      },
+    });
   },
 
   async updateUser(ctx) {
