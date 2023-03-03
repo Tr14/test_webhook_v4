@@ -10,15 +10,14 @@ module.exports = ({ strapi }) => ({
 
       var validJSON = ctx.request.body.json();
 
-      console.log("TRY", data);
+      console.log("TRY", validJSON);
 
     } catch (e) {
       // You can read e for more info
       // Let's assume the error is that we already have parsed the payload
       // So just return that
-      data = validJSON;
 
-      console.log("CATCH", data);
+      console.log("CATCH", validJSON);
     }
 
     let token = [];
