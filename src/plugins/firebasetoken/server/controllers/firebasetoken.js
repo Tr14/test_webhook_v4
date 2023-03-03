@@ -8,7 +8,7 @@ module.exports = ({ strapi }) => ({
       // Parse a JSON
       var validJSON = null;
 
-      var validJSON = ctx.request.body;
+      var validJSON = ctx.request.body.toString();
 
       var data = JSON.parse(validJSON);
 
