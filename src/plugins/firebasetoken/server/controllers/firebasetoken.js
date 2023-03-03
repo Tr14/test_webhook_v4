@@ -43,7 +43,9 @@ module.exports = ({ strapi }) => ({
       },
     });
 
-    console.log(entry);
+    for (let i = 0; i < entry.lenght; i++) {
+      console.log(entry[i]);
+    }
   },
 
   async updateUser(ctx) {
