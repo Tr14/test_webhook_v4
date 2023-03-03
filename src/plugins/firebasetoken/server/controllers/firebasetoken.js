@@ -10,7 +10,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(eventstring)
 
-    var data = JSON.parse(validJSON);
+    var data = JSON.parse(eventstring);
 
     console.log(data);
 
