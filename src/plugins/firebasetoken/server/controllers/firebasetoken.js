@@ -48,6 +48,8 @@ module.exports = ({ strapi }) => ({
 
     var data = ctx.body.response;
 
+    console.log(data);
+
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
         record: mobile,
