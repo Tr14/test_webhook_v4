@@ -8,7 +8,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(data_body);
 
-    let data = JSON.parse(JSON.stringify(data_body));
+    let data = data_body.replace(/^"(.*)"$/, '$1');
 
     console.log(data);
 
