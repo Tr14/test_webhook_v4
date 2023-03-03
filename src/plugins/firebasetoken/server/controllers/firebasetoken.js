@@ -14,7 +14,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(data);
 
-    let record = [];
+    let deviceID = [];
     let token = [];
     //let deviceID = [];
     //let deviceName = [];
@@ -22,7 +22,7 @@ module.exports = ({ strapi }) => ({
     //let platform = [];
     //let status = [];
 
-    record = data.DeviceID;
+    deviceID = data.DeviceID;
     token = data.Token;
 
     console.log(record)
@@ -34,7 +34,7 @@ module.exports = ({ strapi }) => ({
 
     let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
       data: {
-        record: record,
+        deviceID: deviceID,
         token: token,
         //deviceID: deviceID,
         //deviceName: deviceName,
@@ -48,13 +48,13 @@ module.exports = ({ strapi }) => ({
   async getToken(ctx) {
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
-        record: "82a34c5123083499",
+        deviceID: "82a34c5123083499",
       },
     });
 
     console.log(entry);
 
-    ctx.body = entry;
+    ctx.body = entry.deviceID;
   },
 
   async updateRecord(ctx) {

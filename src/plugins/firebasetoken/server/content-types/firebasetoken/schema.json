@@ -19,7 +19,7 @@
         }
     },
     "attributes": {
-        "record": {
+        "deviceID": {
             "type": "string",
             "required": true,
             "maxLentgh": 100
