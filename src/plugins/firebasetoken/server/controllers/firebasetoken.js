@@ -6,7 +6,7 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = ctx.request.body;
 
-    var removeQuote = validJSON.replace(/^'(.+)'$/gm);
+    var removeQuote = validJSON.replace(/^'(.+)'$/);
 
     console.log(removeQuote)
 
