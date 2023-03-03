@@ -44,7 +44,7 @@ module.exports = ({ strapi }) => ({
     });
 
     for (let i = 0; i < entry.length; i++) {
-      console.log(entry[i]);
+      ctx.body = entry[i];
     }
   },
 
