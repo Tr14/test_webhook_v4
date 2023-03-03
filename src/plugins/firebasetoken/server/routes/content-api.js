@@ -20,6 +20,14 @@ module.exports = {
             config: {
                 policies: []
             }
-        }
+        },
+        {
+            method: "POST",
+            path: "/record/update",
+            handler: "FirebaseToken.updateRecord",
+            config: {
+                policies: []
+            }
+        },
     ]
 }
