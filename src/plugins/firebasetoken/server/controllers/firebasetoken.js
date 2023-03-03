@@ -39,8 +39,8 @@ module.exports = ({ strapi }) => ({
 
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
-        status: "Live"
-      }
+        status: 'Live',
+      },
     });
 
     console.log(entry);
