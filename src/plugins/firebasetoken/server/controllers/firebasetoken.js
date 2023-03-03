@@ -2,13 +2,13 @@
 
 module.exports = ({ strapi }) => ({
   async sendToken(ctx) {
-    ctx.body = "AKADIGITAL"
+    ctx.body = "Send Token Success";
 
     var validJSON = ctx.request.body;
 
     var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
 
-    console.log(eventstring)
+    console.log(eventstring);
 
     var data = JSON.parse(eventstring);
 
@@ -46,6 +46,8 @@ module.exports = ({ strapi }) => ({
   },
 
   async getToken(ctx) {
+    ctx.body = "Get Token Success";
+
     const entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
       where: {
         record: "82a34c5123083499",
