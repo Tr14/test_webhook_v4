@@ -51,20 +51,34 @@ module.exports = ({ strapi }) => ({
       },
     });
 
-    console.log(entry);
-
     for (let i = 0; i < entry.length; i++) {
       ctx.body = entry[i].deviceID;
     }
   },
 
-  async updateRecord(ctx) {
+  async updateUser(ctx) {
+    ctx.body = "Update User Identify Success";
+
+    let userIdentified = [];
+
+    var validJSON = ctx.request.body;
+
+    var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
+
+    console.log(eventstring);
+
+    var data = JSON.parse(eventstring);
+
+    console.log(data);
+
+    userIdentified = data.userIdentified
+
     await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
       where: {
-        price: 20,
+        deviceID: "82a34c5123083499",
       },
       data: {
-        price: 18,
+        userIdentified: userIdentified,
       },
     });
   }

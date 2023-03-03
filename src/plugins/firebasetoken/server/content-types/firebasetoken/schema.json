@@ -24,6 +24,10 @@
             "required": true,
             "maxLentgh": 100
         },
+        "userIdentified": {
+            "type": "string",
+            "maxLentgh": 100
+        },
         "token": {
             "type": "string",
             "maxLentgh": 500

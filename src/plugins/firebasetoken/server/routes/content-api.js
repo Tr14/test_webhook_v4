@@ -23,8 +23,8 @@ module.exports = {
         },
         {
             method: "POST",
-            path: "/record/update",
-            handler: "FirebaseToken.updateRecord",
+            path: "/user/update",
+            handler: "FirebaseToken.updateUser",
             config: {
                 policies: []
             }
