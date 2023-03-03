@@ -4,7 +4,7 @@ module.exports = ({ strapi }) => ({
   async sendToken(ctx) {
     ctx.body = "AKADIGITAL"
 
-    var validJSON = `{"responsys": [{"Token": "cQFsmNMUTkyY212n"]}`;
+    var validJSON = '{"responsys": [{"Token": "LMAOEZ"}, {"Token": "1"}]';
 
     console.log(validJSON)
 
