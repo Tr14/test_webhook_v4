@@ -14,7 +14,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(data);
 
-    let mobile = [];
+    let record = [];
     let token = [];
     //let deviceID = [];
     //let deviceName = [];
@@ -22,7 +22,7 @@ module.exports = ({ strapi }) => ({
     //let platform = [];
     //let status = [];
 
-    mobile = data.Mobile;
+    record = data.DeviceID;
     token = data.Token;
     //deviceID = data_body[i].DeviceID;
     //deviceName = data_body[i].DeviceName;
@@ -32,7 +32,7 @@ module.exports = ({ strapi }) => ({
 
     let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
       data: {
-        record: mobile,
+        record: record,
         token: token,
         //deviceID: deviceID,
         //deviceName: deviceName,
