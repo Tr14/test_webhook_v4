@@ -22,24 +22,24 @@ module.exports = ({ strapi }) => ({
     deviceOS = data.DeviceOS;
     platform = data.Platform;
 
-    let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
-      data: {
-        deviceID: deviceID,
-        token: token,
-        deviceOS: deviceOS,
-        deviceName: deviceName,
-        platform: platform,
-        status: "Live"
-      }
-    });
-
     const count = await strapi.db.query('plugin::firebasetoken.firebasetoken').count({
       where: {
         deviceID: deviceID,
       },
     });
 
-    console.log(count);
+    if (count === 0) {
+      let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
+        data: {
+          deviceID: deviceID,
+          token: token,
+          deviceOS: deviceOS,
+          deviceName: deviceName,
+          platform: platform,
+          status: "Live"
+        }
+      });
+    }
   },
 
   async getToken(ctx) {
