@@ -133,6 +133,7 @@ module.exports = ({ strapi }) => ({
     await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
       where: {
         deviceID: deviceID,
+        status: "Dead",
       },
       data: {
         token: token,
