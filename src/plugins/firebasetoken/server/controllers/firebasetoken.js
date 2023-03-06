@@ -35,7 +35,7 @@ module.exports = ({ strapi }) => ({
 
     const count = await strapi.db.query('plugin::firebasetoken.firebasetoken').count({
       where: {
-        title: deviceID,
+        deviceID: deviceID,
       },
     });
 
