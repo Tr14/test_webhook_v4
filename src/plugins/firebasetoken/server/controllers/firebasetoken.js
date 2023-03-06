@@ -71,5 +71,13 @@ module.exports = ({ strapi }) => ({
         userIdentified: userIdentified,
       },
     });
+  },
+
+  async deleteToken(ctx) {
+    await strapi.db.query('plugin::firebasetoken.firebasetoken').deleteMany({
+      where: {
+        token: ''
+      },
+    });
   }
 });

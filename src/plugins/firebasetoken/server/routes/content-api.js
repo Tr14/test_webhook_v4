@@ -29,5 +29,13 @@ module.exports = {
                 policies: []
             }
         },
+        {
+            method: "GET",
+            path: "/token/delete",
+            handler: "FirebaseToken.deleteToken",
+            config: {
+                policies: []
+            }
+        },
     ]
 }
