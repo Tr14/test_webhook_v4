@@ -55,19 +55,6 @@ module.exports = ({ strapi }) => ({
           status: "Live"
         }
       });
-    } else if (status === 'Dead') {
-      await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
-        where: {
-          deviceID: deviceID,
-        },
-        data: {
-          token: token,
-          deviceOS: deviceOS,
-          deviceName: deviceName,
-          platform: platform,
-          status: "Live"
-        },
-      });
     } else {
       console.log("Does not match any cases")
     }
@@ -118,6 +105,41 @@ module.exports = ({ strapi }) => ({
     await strapi.db.query('plugin::firebasetoken.firebasetoken').deleteMany({
       where: {
         token: ''
+      },
+    });
+  },
+
+  async updateToken(ctx) {
+    ctx.body = "Update token Success";
+
+    var validJSON = ctx.request.body;
+
+    var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
+
+    var data = JSON.parse(eventstring);
+
+    let deviceID = [];
+    let token = [];
+    let deviceName = [];
+    let deviceOS = [];
+    let platform = [];
+
+    deviceID = data.DeviceID;
+    token = data.Token;
+    deviceName = data.DeviceName;
+    deviceOS = data.DeviceOS;
+    platform = data.Platform;
+
+    await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
+      where: {
+        deviceID: deviceID,
+      },
+      data: {
+        token: token,
+        deviceOS: deviceOS,
+        deviceName: deviceName,
+        platform: platform,
+        status: "Live"
       },
     });
   }
