@@ -55,6 +55,7 @@ module.exports = ({ strapi }) => ({
 
     for (let i = 0; i < record.length; i++) {
       status = record[i].status;
+      token = record[i].Token;
 
       console.log(status);
 
