@@ -38,13 +38,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(record);
 
-    for (let i = 0; i < record.length; i++) {
-      status = record[i].status;
-
-      console.log(status);
-    };
-
-    if (count <= 2) {
+    if (count == 0) {
       let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
         data: {
           deviceID: deviceID,
@@ -58,6 +52,26 @@ module.exports = ({ strapi }) => ({
     } else {
       console.log("Does not match any cases")
     }
+
+    for (let i = 0; i < record.length; i++) {
+      status = record[i].status;
+
+      console.log(status);
+
+      await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
+        where: {
+          deviceID: deviceID,
+          status: "Dead",
+        },
+        data: {
+          token: token,
+          deviceOS: deviceOS,
+          deviceName: deviceName,
+          platform: platform,
+          status: "Live"
+        },
+      });
+    };
   },
 
   async getToken(ctx) {
