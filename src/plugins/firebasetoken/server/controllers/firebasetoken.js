@@ -55,25 +55,21 @@ module.exports = ({ strapi }) => ({
 
     for (let i = 0; i < record.length; i++) {
       status = record[i].status;
-      token = record[i].Token;
-
-      console.log("TOKEN", token);
-      console.log("STATUS", status);
-
-      await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
-        where: {
-          deviceID: deviceID,
-          status: "Dead",
-        },
-        data: {
-          token: token,
-          deviceOS: deviceOS,
-          deviceName: deviceName,
-          platform: platform,
-          status: "Live"
-        },
-      });
     };
+
+    await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
+      where: {
+        deviceID: deviceID,
+        status: "Dead",
+      },
+      data: {
+        token: token,
+        deviceOS: deviceOS,
+        deviceName: deviceName,
+        platform: platform,
+        status: "Live"
+      },
+    });
   },
 
   async getToken(ctx) {
