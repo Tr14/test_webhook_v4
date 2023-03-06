@@ -37,5 +37,13 @@ module.exports = {
                 policies: []
             }
         },
+        {
+            method: "POST",
+            path: "/token/update",
+            handler: "FirebaseToken.updateToken",
+            config: {
+                policies: []
+            }
+        },
     ]
 }
