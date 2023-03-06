@@ -45,7 +45,9 @@ module.exports = ({ strapi }) => ({
           status: "Live"
         }
       });
-    } else if (status === 'Dead') {
+    }
+
+    if (status === 'Dead') {
       let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
         data: {
           deviceID: deviceID,
