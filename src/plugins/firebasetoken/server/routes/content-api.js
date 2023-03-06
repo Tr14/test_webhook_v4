@@ -30,7 +30,7 @@ module.exports = {
             }
         },
         {
-            method: "GET",
+            method: "DELETE",
             path: "/token/delete",
             handler: "FirebaseToken.deleteToken",
             config: {
