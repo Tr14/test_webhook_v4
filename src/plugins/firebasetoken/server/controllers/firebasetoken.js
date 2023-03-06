@@ -57,7 +57,8 @@ module.exports = ({ strapi }) => ({
       status = record[i].status;
       token = record[i].Token;
 
-      console.log(status);
+      console.log("TOKEN", token);
+      console.log("STATUS", status);
 
       await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
         where: {
