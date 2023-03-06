@@ -32,6 +32,14 @@ module.exports = ({ strapi }) => ({
         status: "Live"
       }
     });
+
+    const count = await strapi.db.query('plugin::firebasetoken.firebasetoken').count({
+      where: {
+        title: deviceID,
+      },
+    });
+
+    console.log(count);
   },
 
   async getToken(ctx) {
