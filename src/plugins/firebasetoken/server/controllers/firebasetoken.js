@@ -28,7 +28,24 @@ module.exports = ({ strapi }) => ({
       },
     });
 
+    const status = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
+      where: {
+        status: 'Dead',
+      },
+    });
+
     if (count === 0) {
+      let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
+        data: {
+          deviceID: deviceID,
+          token: token,
+          deviceOS: deviceOS,
+          deviceName: deviceName,
+          platform: platform,
+          status: "Live"
+        }
+      });
+    } else if (status === 'Dead') {
       let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
         data: {
           deviceID: deviceID,
