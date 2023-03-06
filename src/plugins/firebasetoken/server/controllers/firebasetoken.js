@@ -55,16 +55,18 @@ module.exports = ({ strapi }) => ({
           status: "Live"
         }
       });
-    } else if (status === 'Dead' && count >= 0) {
-      let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
-        data: {
+    } else if (status === 'Dead') {
+      await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
+        where: {
           deviceID: deviceID,
+        },
+        data: {
           token: token,
           deviceOS: deviceOS,
           deviceName: deviceName,
           platform: platform,
           status: "Live"
-        }
+        },
       });
     } else {
       console.log("Does not match any cases")
