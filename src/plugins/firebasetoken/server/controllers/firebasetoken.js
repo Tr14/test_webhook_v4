@@ -44,7 +44,7 @@ module.exports = ({ strapi }) => ({
       console.log(status);
     };
 
-    if (count <= 1) {
+    if (count <= 2) {
       let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
         data: {
           deviceID: deviceID,
