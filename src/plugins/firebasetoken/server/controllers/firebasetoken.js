@@ -28,6 +28,12 @@ module.exports = ({ strapi }) => ({
       },
     });
 
+    const record = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
+      where: {
+        status: "Dead",
+      },
+    });
+
     let status = [];
 
     console.log(record);
@@ -36,12 +42,6 @@ module.exports = ({ strapi }) => ({
       status = record[i].status;
 
       console.log(status);
-
-      const record = await strapi.db.query('plugin::firebasetoken.firebasetoken').findMany({
-        where: {
-          status: status,
-        },
-      });
     };
 
     if (count === 0) {
