@@ -29,24 +29,19 @@
             "maxLentgh": 100
         },
         "expiryTimestamp": {
-            "type": "string",
-            "maxLentgh": 100
+            "type": "timestamp"
         },
         "iconURL": {
-            "type": "string",
-            "maxLentgh": 500
+            "type": "text"
         },
         "message": {
-            "type": "string",
-            "maxLentgh": 1000
+            "type": "text"
         },
         "richMessageHTML": {
-            "type": "string",
-            "maxLentgh": 10000
+            "type": "richtext"
         },
         "sentTimestamp": {
-            "type": "string",
-            "maxLentgh": 100
+            "type": "timestamp"
         }
     }
 }
