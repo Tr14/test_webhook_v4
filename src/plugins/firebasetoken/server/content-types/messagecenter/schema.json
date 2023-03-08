@@ -39,7 +39,7 @@
             "type": "text"
         },
         "richMessageHTML": {
-            "type": "richtext"
+            "type": "text"
         },
         "sentTimestamp": {
             "type": "timestamp"
