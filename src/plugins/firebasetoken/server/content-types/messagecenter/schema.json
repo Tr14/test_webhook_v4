@@ -1,0 +1,51 @@
+{
+    "kind": "collectionType",
+    "collectionName": "messagecenters",
+    "info": {
+        "singularName": "messagecenter",
+        "pluralName": "messagecenters",
+        "displayName": "Message Center"
+    },
+    "options": {
+        "draftAndPublish": false,
+        "comment": ""
+    },
+    "pluginOptions": {
+        "content-manager": {
+            "visible": true
+        },
+        "content-type-builder": {
+            "visible": true
+        }
+    },
+    "attributes": {
+        "deeplinkURL": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "expiryTimestamp": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "iconURL": {
+            "type": "string",
+            "maxLentgh": 500
+        },
+        "message": {
+            "type": "string",
+            "maxLentgh": 1000
+        },
+        "richMessageHTML": {
+            "type": "string",
+            "maxLentgh": 10000
+        },
+        "sentTimestamp": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "subject": {
+            "type": "string",
+            "maxLentgh": 100
+        }
+    }
+}
