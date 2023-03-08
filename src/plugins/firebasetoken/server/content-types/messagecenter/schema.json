@@ -19,14 +19,30 @@
         }
     },
     "attributes": {
-        "deviceID": {
+        "subject": {
             "type": "string",
             "required": true,
             "maxLentgh": 100
         },
-        "userIdentified": {
+        "deeplinkURL": {
             "type": "string",
             "maxLentgh": 100
+        },
+        "expiryTimestamp": {
+            "type": "timestamp"
+        },
+        "iconURL": {
+            "type": "string",
+            "maxLentgh": 500
+        },
+        "message": {
+            "type": "text"
+        },
+        "richMessageHTML": {
+            "type": "richtext"
+        },
+        "sentTimestamp": {
+            "type": "timestamp"
         }
     }
 }

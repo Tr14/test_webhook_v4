@@ -6,5 +6,5 @@ const netcorelog = require('./netcorelog');
 module.exports = {
     facebooklead,
     netcorelead,
-
+    netcorelog
 };
