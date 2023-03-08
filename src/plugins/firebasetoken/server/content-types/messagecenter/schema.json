@@ -19,6 +19,11 @@
         }
     },
     "attributes": {
+        "subject": {
+            "type": "string",
+            "required": true,
+            "maxLentgh": 100
+        },
         "deeplinkURL": {
             "type": "string",
             "maxLentgh": 100
@@ -40,10 +45,6 @@
             "maxLentgh": 10000
         },
         "sentTimestamp": {
-            "type": "string",
-            "maxLentgh": 100
-        },
-        "subject": {
             "type": "string",
             "maxLentgh": 100
         }
