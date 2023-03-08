@@ -19,12 +19,12 @@
         }
     },
     "attributes": {
-        "subject": {
+        "deviceID": {
             "type": "string",
             "required": true,
             "maxLentgh": 100
         },
-        "deeplinkURL": {
+        "userIdentified": {
             "type": "string",
             "maxLentgh": 100
         }

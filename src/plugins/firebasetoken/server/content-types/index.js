@@ -5,5 +5,5 @@ const messagecenter = require('./messagecenter');
 
 module.exports = {
     firebasetoken,
-    messagecenter
+    messagecenter,
 };
