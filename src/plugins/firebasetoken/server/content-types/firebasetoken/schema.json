@@ -51,6 +51,10 @@
         "status": {
             "type": "string",
             "maxLentgh": 10
+        },
+        "packageName": {
+            "type": "string",
+            "maxLentgh": 100
         }
     }
 }

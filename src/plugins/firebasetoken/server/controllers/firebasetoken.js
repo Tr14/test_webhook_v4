@@ -15,16 +15,25 @@ module.exports = ({ strapi }) => ({
     let deviceName = [];
     let deviceOS = [];
     let platform = [];
+    let packageName = [];
 
     deviceID = data.DeviceID;
     token = data.Token;
     deviceName = data.DeviceName;
     deviceOS = data.DeviceOS;
     platform = data.Platform;
+    packageName = data.PackageName;
 
+    //only one token for each device
     const count = await strapi.db.query('plugin::firebasetoken.firebasetoken').count({
       where: {
         deviceID: deviceID,
+      },
+    });
+
+    const count2 = await strapi.db.query('plugin::firebasetoken.firebasetoken').count({
+      where: {
+        packageName: packageName,
       },
     });
 
@@ -38,6 +47,7 @@ module.exports = ({ strapi }) => ({
 
     console.log(record);
 
+    //add token
     if (count == 0) {
       let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
         data: {
@@ -46,6 +56,19 @@ module.exports = ({ strapi }) => ({
           deviceOS: deviceOS,
           deviceName: deviceName,
           platform: platform,
+          packageName: packageName,
+          status: "Live"
+        }
+      });
+    } else if (count2 <= 1) {
+      let entry = await strapi.db.query('plugin::firebasetoken.firebasetoken').create({
+        data: {
+          deviceID: deviceID,
+          token: token,
+          deviceOS: deviceOS,
+          deviceName: deviceName,
+          platform: platform,
+          packageName: packageName,
           status: "Live"
         }
       });
@@ -53,6 +76,7 @@ module.exports = ({ strapi }) => ({
       console.log("Does not match any cases")
     }
 
+    //update status and token
     for (let i = 0; i < record.length; i++) {
       status = record[i].status;
     };
@@ -67,6 +91,7 @@ module.exports = ({ strapi }) => ({
         deviceOS: deviceOS,
         deviceName: deviceName,
         platform: platform,
+        packageName: packageName,
         status: "Live"
       },
     });
@@ -94,6 +119,7 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = ctx.request.body;
 
+    //validate string
     var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
 
     var data = JSON.parse(eventstring);
@@ -126,6 +152,7 @@ module.exports = ({ strapi }) => ({
 
     var validJSON = ctx.request.body;
 
+    //validate string
     var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
 
     var data = JSON.parse(eventstring);
