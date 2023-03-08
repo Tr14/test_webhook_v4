@@ -32,10 +32,6 @@
             "type": "string",
             "maxLentgh": 500
         },
-        "deviceID": {
-            "type": "string",
-            "maxLentgh": 100
-        },
         "deviceName": {
             "type": "string",
             "maxLentgh": 100
