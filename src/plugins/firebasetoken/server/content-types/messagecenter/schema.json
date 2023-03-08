@@ -27,21 +27,6 @@
         "deeplinkURL": {
             "type": "string",
             "maxLentgh": 100
-        },
-        "expiryTimestamp": {
-            "type": "timestamp"
-        },
-        "iconURL": {
-            "type": "text"
-        },
-        "message": {
-            "type": "text"
-        },
-        "richMessageHTML": {
-            "type": "richtext"
-        },
-        "sentTimestamp": {
-            "type": "timestamp"
         }
     }
 }
