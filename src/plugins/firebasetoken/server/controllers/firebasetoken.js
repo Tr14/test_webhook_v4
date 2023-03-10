@@ -116,6 +116,7 @@ module.exports = ({ strapi }) => ({
 
     let userIdentified = [];
     let deviceID = [];
+    let packageName = [];
 
     var validJSON = ctx.request.body;
 
@@ -126,10 +127,13 @@ module.exports = ({ strapi }) => ({
 
     userIdentified = data.userIdentified;
     deviceID = data.DeviceID;
+    packageName = data.PackageName;
+
 
     await strapi.db.query('plugin::firebasetoken.firebasetoken').updateMany({
       where: {
         deviceID: deviceID,
+        packageName: packageName,
       },
       data: {
         userIdentified: userIdentified,
