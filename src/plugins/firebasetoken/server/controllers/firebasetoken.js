@@ -226,7 +226,7 @@ module.exports = ({ strapi }) => ({
         iconURL: iconURL,
         message: message,
         richMessageHTML: richMessageHTML,
-        sentTime: sendTimeFinal
+        sentTime: sentTime
       }
     });
   }
