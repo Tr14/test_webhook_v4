@@ -213,7 +213,9 @@ module.exports = ({ strapi }) => ({
     sentTime = new Date(data.SentTime);
     iconURL = data.IconURL;
     message = data.MessageContent;
-    richMessageHTML = data.richMessageHTML;
+    richMessageHTML = data.RichContent;
+
+    console.log(sentTime)
 
     let entry = await strapi.db.query('plugin::firebasetoken.messagecenter').create({
       data: {
