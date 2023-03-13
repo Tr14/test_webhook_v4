@@ -205,17 +205,19 @@ module.exports = ({ strapi }) => ({
     let sentTime = [];
     let deviceID = [];
     let packageName = [];
+    let sendTimeFinal = [];
 
     subject = data.Subject;
     deeplinkURL = data.DeeplinkURL;
     deviceID = data.DeviceID;
     packageName = data.PackageName;
-    sentTime = new Date(data.SentTime.replace(/^["'](.+(?=["']$))["']$/, '$1'));
+    sentTime = data.SentTime;
+    sendTimeFinal = sendTime.replace(/^["'](.+(?=["']$))["']$/, '$1');
     iconURL = data.IconURL;
     message = data.MessageContent;
     richMessageHTML = data.RichContent;
 
-    console.log(sentTime)
+    console.log(sendTimeFinal)
 
     let entry = await strapi.db.query('plugin::firebasetoken.messagecenter').create({
       data: {
