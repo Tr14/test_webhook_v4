@@ -43,6 +43,14 @@
         },
         "sentTime": {
             "type": "datetime"
+        },
+        "DeviceID": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "PackageName": {
+            "type": "string",
+            "maxLentgh": 100
         }
     }
 }
