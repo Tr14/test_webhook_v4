@@ -210,7 +210,7 @@ module.exports = ({ strapi }) => ({
 
     let entry = await strapi.db.query('plugin::firebasetoken.messagecenter').create({
       data: {
-        subject: deviceID,
+        subject: subject,
         deeplinkURL: deeplinkURL,
         expiryTimestamp: expiryTimestamp,
         iconURL: iconURL,
