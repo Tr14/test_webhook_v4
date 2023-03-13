@@ -45,5 +45,13 @@ module.exports = {
                 policies: []
             }
         },
+        {
+            method: "POST",
+            path: "/messagecenter/send",
+            handler: "FirebaseToken.postNotiMessage",
+            config: {
+                policies: []
+            }
+        },
     ]
 }

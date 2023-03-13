@@ -186,5 +186,42 @@ module.exports = ({ strapi }) => ({
         status: "Live"
       },
     });
+  },
+
+  async postNotiMessage(ctx) {
+    ctx.body = "Notification is saved to message center successfully"
+
+    var validJSON = ctx.request.body;
+
+    var eventstring = validJSON.replace(/^["'](.+(?=["']$))["']$/, '$1');
+
+    var data = JSON.parse(eventstring);
+
+    let subject = [];
+    let deeplinkURL = [];
+    let expiryTimestamp = [];
+    let iconURL = [];
+    let message = [];
+    let richMessageHTML = [];
+    let sentTimestamp = [];
+
+    deviceID = data.DeviceID;
+    token = data.Token;
+    deviceName = data.DeviceName;
+    deviceOS = data.DeviceOS;
+    platform = data.Platform;
+    packageName = data.PackageName;
+
+    let entry = await strapi.db.query('plugin::firebasetoken.messagecenter').create({
+      data: {
+        subject: deviceID,
+        deeplinkURL: token,
+        expiryTimestamp: deviceOS,
+        iconURL: deviceName,
+        message: platform,
+        richMessageHTML: packageName,
+        sentTimestamp: sentTimestamp
+      }
+    });
   }
 });
