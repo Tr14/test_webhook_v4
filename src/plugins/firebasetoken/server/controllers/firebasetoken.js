@@ -210,8 +210,7 @@ module.exports = ({ strapi }) => ({
     deeplinkURL = data.DeeplinkURL;
     deviceID = data.DeviceID;
     packageName = data.PackageName;
-    sentTime = Number(data.SentTime);
-    sendTimeFinal = new Date(sendTime);
+    sentTime = Number(new Date(data.SentTime));
     iconURL = data.IconURL;
     message = data.MessageContent;
     richMessageHTML = data.RichContent;
