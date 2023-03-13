@@ -28,7 +28,7 @@
             "type": "string",
             "maxLentgh": 100
         },
-        "expiryTimestamp": {
+        "expiryTime": {
             "type": "datetime"
         },
         "iconURL": {
@@ -41,7 +41,7 @@
         "richMessageHTML": {
             "type": "text"
         },
-        "sentTimestamp": {
+        "sentTime": {
             "type": "datetime"
         }
     }
