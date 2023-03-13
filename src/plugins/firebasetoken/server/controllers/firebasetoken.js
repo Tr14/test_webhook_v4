@@ -217,11 +217,9 @@ module.exports = ({ strapi }) => ({
       data: {
         subject: subject,
         deeplinkURL: deeplinkURL,
-        expiryTimestamp: expiryTimestamp,
         iconURL: iconURL,
         message: message,
-        richMessageHTML: richMessageHTML,
-        sentTimestamp: sentTimestamp
+        richMessageHTML: richMessageHTML
       }
     });
   }
