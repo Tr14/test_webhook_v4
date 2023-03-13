@@ -44,11 +44,11 @@
         "sentTime": {
             "type": "datetime"
         },
-        "DeviceID": {
+        "deviceID": {
             "type": "string",
             "maxLentgh": 100
         },
-        "PackageName": {
+        "packageName": {
             "type": "string",
             "maxLentgh": 100
         }
