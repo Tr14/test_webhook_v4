@@ -29,7 +29,7 @@
             "maxLentgh": 100
         },
         "expiryTimestamp": {
-            "type": "timestamp"
+            "type": "datetime"
         },
         "iconURL": {
             "type": "string",
@@ -42,7 +42,7 @@
             "type": "text"
         },
         "sentTimestamp": {
-            "type": "timestamp"
+            "type": "datetime"
         }
     }
 }
