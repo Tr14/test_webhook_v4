@@ -53,5 +53,13 @@ module.exports = {
                 policies: []
             }
         },
+        {
+            method: "GET",
+            path: "/messagecenter/get",
+            handler: "FirebaseToken.getNotiMessage",
+            config: {
+                policies: []
+            }
+        },
     ]
 }

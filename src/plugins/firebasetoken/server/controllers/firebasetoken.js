@@ -227,5 +227,19 @@ module.exports = ({ strapi }) => ({
         sentTime: sentTime
       }
     });
+  },
+
+  async getNotiMessage(ctx) {
+    ctx.body = "Get message Success";
+
+    const entry = await strapi.db.query('plugin::firebasetoken.messagecenter').findMany({
+      where: {
+        packageName: 'com.aka_project',
+      },
+    });
+
+    for (let i = 0; i < entry.length; i++) {
+      ctx.body = entry[i];
+    }
   }
 });
