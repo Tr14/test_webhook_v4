@@ -232,7 +232,7 @@ module.exports = ({ strapi }) => ({
   async getNotiMessage(ctx) {
     ctx.body = "Get message Success";
 
-    const entry = await strapi.db.query('plugin::firebasetoken.messagecenter').findMany({
+    const entry = await strapi.db.query('plugin::firebasetoken.messagecenter').find({
       where: {
         packageName: 'com.aka_project',
       },
