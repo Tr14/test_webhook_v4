@@ -396,6 +396,10 @@ module.exports = {
     let statusCode = ctx.response.status;
     console.log(statusCode);
     console.log("typeof statusCode:", typeof statusCode);
+  },
+
+  async emailHandle(ctx) {
+    ctx.body = "Lmaoez"
   }
 };
 

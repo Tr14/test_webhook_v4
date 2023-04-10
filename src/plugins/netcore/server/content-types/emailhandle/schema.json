@@ -1,0 +1,40 @@
+{
+    "kind": "collectionType",
+    "collectionName": "emailhandles",
+    "info": {
+        "singularName": "emailhandle",
+        "pluralName": "emailhandles",
+        "displayName": "Email Handle"
+    },
+    "options": {
+        "draftAndPublish": false,
+        "comment": ""
+    },
+    "pluginOptions": {
+        "content-manager": {
+            "visible": true
+        },
+        "content-type-builder": {
+            "visible": true
+        }
+    },
+    "attributes": {
+        "Email": {
+            "type": "string",
+            "required": true,
+            "maxLentgh": 100
+        },
+        "Full_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Form_Name": {
+            "type": "string",
+            "maxLentgh": 100
+        },
+        "Submitted": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

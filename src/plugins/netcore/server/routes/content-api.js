@@ -20,6 +20,14 @@ module.exports = {
             config: {
                 policies: []
             }
+        },
+        {
+            method: "POST",
+            path: "/emailhandle",
+            handler: "Netcore.emailHandle",
+            config: {
+                policies: []
+            }
         }
     ]
 }
