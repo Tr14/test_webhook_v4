@@ -400,6 +400,9 @@ module.exports = {
 
   async emailHandle(ctx) {
     ctx.body = "Lmaoez"
+
+    console.log(ctx.request.body);
+    console.log(ctx.request.header);
   }
 };
 
