@@ -404,13 +404,22 @@ module.exports = {
     console.log(ctx.request.body);
     console.log(ctx.request.header);
 
-    const entry = await strapi.db.query('plugin::netcore.emailhandle').create({
-      data: {
-        Full_Name: ctx.request.body.FULL_NAME,
-        Email: ctx.request.body.EMAIL,
-        Submitted: "Yes"
-      },
+    const entry2 = await strapi.db.query('plugin::netcore.emailhandle').findOne({
+      select: ['Full_Name'],
+      where: { Full_Name: ctx.request.body.FULL_NAME, Submitted: "Yes" }
     });
+
+    if (entry2) {
+      console.log("Lmaoez")
+    } else {
+      const entry = await strapi.db.query('plugin::netcore.emailhandle').create({
+        data: {
+          Full_Name: ctx.request.body.FULL_NAME,
+          Email: ctx.request.body.EMAIL,
+          Submitted: "Yes"
+        },
+      });
+    }
   }
 };
 
