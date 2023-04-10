@@ -403,6 +403,14 @@ module.exports = {
 
     console.log(ctx.request.body);
     console.log(ctx.request.header);
+
+    const entry = await strapi.db.query('plugin::netcore.emailhandle').create({
+      data: {
+        Full_Name: ctx.request.body.FULL_NAME,
+        Email: ctx.request.body.EMAIL,
+        Submitted: "Yes"
+      },
+    });
   }
 };
 
