@@ -19,9 +19,13 @@
         }
     },
     "attributes": {
-        "Email": {
+        "Email_User_Submitted": {
             "type": "string",
             "required": true,
+            "maxLentgh": 100
+        },
+        "Email_of_User": {
+            "type": "string",
             "maxLentgh": 100
         },
         "Full_Name": {
