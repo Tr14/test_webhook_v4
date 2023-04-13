@@ -429,7 +429,11 @@ module.exports = {
       where: { Submitted: "Yes" }
     });
 
+    console.log(entry.toString())
+
     var a = '{"items":' + entry.toString() + '}'
+
+    console.log(a)
 
     ctx.body = JSON.parse(a);
   }
