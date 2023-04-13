@@ -431,7 +431,7 @@ module.exports = {
 
     console.log(entry)
 
-    var a = '{"items":' + entry.toString() + '}'
+    var a = '{"items":' + entry + '}'
 
     console.log(a)
 
