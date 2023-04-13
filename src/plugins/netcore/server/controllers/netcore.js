@@ -429,7 +429,7 @@ module.exports = {
       where: { Submitted: "Yes" }
     });
 
-    console.log(entry.toString())
+    console.log(entry)
 
     var a = '{"items":' + entry.toString() + '}'
 
