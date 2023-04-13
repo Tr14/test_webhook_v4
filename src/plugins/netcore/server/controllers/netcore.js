@@ -425,7 +425,7 @@ module.exports = {
 
   async getEmailHandle(ctx) {
     const entry = await strapi.db.query('plugin::netcore.emailhandle').findMany({
-      select: ['Submitted'],
+      select: ['Email_of_User', 'Full_Name', 'Email_User_Submitted', 'Submitted'],
       where: { Submitted: "Yes" }
     });
 
