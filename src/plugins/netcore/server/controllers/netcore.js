@@ -429,13 +429,15 @@ module.exports = {
       where: { Submitted: "Yes" }
     });
 
-    console.log(entry)
+    console.log(entry);
 
-    var a = '{"items":' + entry + '}'
+    var a = {};
 
-    console.log(a)
+    a['items'] = entry;
 
-    ctx.body = JSON.parse(a);
+    console.log(a);
+
+    ctx.body = a;
   }
 };
 
