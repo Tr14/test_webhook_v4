@@ -431,13 +431,13 @@ module.exports = {
 
     console.log(entry);
 
-    var a = {};
+    var data = {};
 
-    a['items'] = entry;
+    data['items'] = entry;
 
-    console.log(a);
+    console.log(data);
 
-    ctx.body = a;
+    ctx.body = data;
   }
 };
 
