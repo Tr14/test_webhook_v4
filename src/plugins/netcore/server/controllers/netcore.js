@@ -410,7 +410,7 @@ module.exports = {
     if (entry2) {
       ctx.body = {
         "Full_Name": ctx.request.body.FULL_NAME,
-        "Message": "The email" + ctx.request.body.EMAIL_GMAIL + "you receive this form is only allowed to submit once"
+        "Message": "The email " + ctx.request.body.EMAIL_GMAIL + " you receive this form is only allowed to submit once"
       }
     } else {
       const entry = await strapi.db.query('plugin::netcore.emailhandle').create({
