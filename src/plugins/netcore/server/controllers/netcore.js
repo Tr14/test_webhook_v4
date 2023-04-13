@@ -429,7 +429,9 @@ module.exports = {
       where: { Submitted: "Yes" }
     });
 
-    ctx.body = '{"items":' + entry.toString() + '}';
+    var a = '{"items":' + entry.toString() + '}'
+
+    ctx.body = JSON.parse(a);
   }
 };
 
