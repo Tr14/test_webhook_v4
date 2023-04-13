@@ -410,7 +410,7 @@ module.exports = {
     if (entry2) {
       ctx.body = {
         "Full_Name": ctx.request.body.FULL_NAME,
-        "Message": "The email" + ctx.request.body.FULL_NAME + "you used is already subscribed."
+        "Message": "The email" + ctx.request.body.EMAIL_GMAIL + "you used is already subscribed."
       }
     } else {
       const entry = await strapi.db.query('plugin::netcore.emailhandle').create({
