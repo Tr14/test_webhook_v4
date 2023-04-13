@@ -399,8 +399,6 @@ module.exports = {
   },
 
   async emailHandle(ctx) {
-    ctx.body = "Lmaoez"
-
     console.log(ctx.request.body);
     console.log(ctx.request.header);
 
@@ -410,7 +408,7 @@ module.exports = {
     });
 
     if (entry2) {
-      console.log("Lmaoez")
+      return false;
     } else {
       const entry = await strapi.db.query('plugin::netcore.emailhandle').create({
         data: {
