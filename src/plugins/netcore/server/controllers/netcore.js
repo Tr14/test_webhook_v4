@@ -429,7 +429,7 @@ module.exports = {
       where: { Submitted: "Yes" }
     });
 
-    ctx.body = entry;
+    ctx.body = '{"items":' + entry.toString() + '}';
   }
 };
 
