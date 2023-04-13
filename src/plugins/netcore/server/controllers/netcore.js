@@ -408,7 +408,10 @@ module.exports = {
     });
 
     if (entry2) {
-      return false;
+      ctx.body = {
+        "Full_Name": ctx.request.body.FULL_NAME,
+        "Message": "The email" + ctx.request.body.FULL_NAME + "you used is already subscribed."
+      }
     } else {
       const entry = await strapi.db.query('plugin::netcore.emailhandle').create({
         data: {
@@ -418,6 +421,8 @@ module.exports = {
           Submitted: "Yes"
         },
       });
+
+      ctx.body = entry;
     }
   },
 
