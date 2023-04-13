@@ -424,7 +424,12 @@ module.exports = {
   },
 
   async getEmailHandle(ctx) {
-    ctx.body = "Lmaeoz";
+    const entry = await strapi.db.query('plugin::netcore.emailhandle').findMany({
+      select: ['Submitted'],
+      where: { Submitted: "Yes" }
+    });
+
+    ctx.body = entry;
   }
 };
 
