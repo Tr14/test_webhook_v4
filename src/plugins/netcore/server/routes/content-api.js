@@ -28,6 +28,14 @@ module.exports = {
             config: {
                 policies: []
             }
+        },
+        {
+            method: "GET",
+            path: "/getemailhandle",
+            handler: "Netcore.getEmailHandle",
+            config: {
+                policies: []
+            }
         }
     ]
 }

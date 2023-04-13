@@ -421,6 +421,10 @@ module.exports = {
         },
       });
     }
+  },
+
+  async getEmailHandle(ctx) {
+    ctx.body = "Lmaeoz";
   }
 };
 
