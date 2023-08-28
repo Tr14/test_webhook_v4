@@ -60,23 +60,23 @@ module.exports = {
     console.log('fbm get webhook:');
     console.log(ctx.request.query);
 
+    /*
     let challenge = ctx.request.query['hub.challenge'];
-
     //let service = strapi.plugins[pluginName].services.zalo;
     //service.webhook(ctx.request.body);
-
     ctx.send(challenge);
+    */
   },
 
   async post_webhook(ctx) {
     console.log('fbm post webhook:');
     console.log(ctx.request.body);
+    ctx.body = "Hello from facebook webhook"
 
     //let challenge = ctx.request.query['hub.challenge'];
     //let service = strapi.plugins[pluginName].services.zalo;
     //service.webhook(ctx.request.body);
-
-    ctx.send({ ok: true });
+    /*ctx.send({ ok: true });*/
   },
 
   async send(ctx) {

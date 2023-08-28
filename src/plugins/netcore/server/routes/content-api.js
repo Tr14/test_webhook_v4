@@ -36,14 +36,6 @@ module.exports = {
             config: {
                 policies: []
             }
-        },
-        {
-            method: "POST",
-            path: "/webhook/facebook/lead/send",
-            handler: "Facebook.send",
-            config: {
-                policies: []
-            }
         }
     ]
 }
