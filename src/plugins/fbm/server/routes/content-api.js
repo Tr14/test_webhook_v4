@@ -7,7 +7,7 @@ module.exports = {
     routes: [
         {
             method: "GET",
-            path: "/webhook/get",
+            path: "/webhook",
             handler: "FBM.get_webhook",
             config: {
                 policies: [],
@@ -16,7 +16,7 @@ module.exports = {
         },
         {
             method: "POST",
-            path: "/webhook/post",
+            path: "/webhook",
             handler: "FBM.post_webhook",
             config: {
                 policies: [],
