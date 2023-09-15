@@ -24,4 +24,9 @@ module.exports = {
         enabled: true,
         resolve: './src/plugins/firebasetoken'
     },
+
+    'netcore': {
+        enabled: true,
+        resolve: './src/plugins/mparticle'
+    },
 }
