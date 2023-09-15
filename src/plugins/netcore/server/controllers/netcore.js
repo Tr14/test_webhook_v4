@@ -358,44 +358,8 @@ module.exports = {
   },
 
   async customApi(ctx) {
-    ctx.body = strapi
-      .plugin('netcore')
-      .service('NetcoreServices')
-      .getResultLogging();
-
-    //Logging
-    let request_urls = ctx.request.url;
-    let request_method = ctx.request.method;
-    let request_record = "Lmaoez@gmail.com";
-    console.log("URL", request_urls);
-    console.log("METHOD", request_method);
-    console.log("Header", ctx.request.header)
-
-    ctx.body = ctx.request.header;
-
-    try {
-      if (request_record != "") {
-        console.log("RECORD", request_record)
-
-        let logging = await strapi.db.query('plugin::netcore.netcorelog').create({
-          data: {
-            record: request_record,
-            method: request_method,
-            url: request_urls
-          }
-        });
-
-        console.log("DATA:", logging)
-      } else {
-        console.log("METHOD does not execute")
-      }
-    } catch (error) {
-      console.error(error);
-    }
-
-    let statusCode = ctx.response.status;
-    console.log(statusCode);
-    console.log("typeof statusCode:", typeof statusCode);
+    ctx.body = "Hello from AKA webhook"
+    console.log("METHOD executed")
   },
 
   async emailHandle(ctx) {

@@ -14,7 +14,7 @@ module.exports = {
             }
         },
         {
-            method: "GET",
+            method: "POST",
             path: "/customapi",
             handler: "Netcore.customApi",
             config: {

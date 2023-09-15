@@ -1,7 +1,7 @@
 'use strict';
 
-const myController = require('./my-controller');
+const mParticle = require('./mparticle');
 
 module.exports = {
-  myController,
+  mParticle,
 };
