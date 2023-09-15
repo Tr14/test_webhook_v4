@@ -1,12 +1,12 @@
 module.exports = {
-    'Zalo': {
+    'zalo': {
         enabled: true,
         resolve: './src/plugins/zalo',
         messageRules: ['#', "*", "?"],
         url: "https://openapi.zalo.me/v2.0/oa",
     },
 
-    'Facebook': {
+    'fbm': {
         enabled: true,
         resolve: './src/plugins/fbm',
         loginURL: "https://portal-uat.prudential.com.vn/pulse-lead-corporate/auth/login",
@@ -15,17 +15,17 @@ module.exports = {
         password: "Prudential01@"
     },
 
-    'Netcore': {
+    'netcore': {
         enabled: true,
         resolve: './src/plugins/netcore'
     },
 
-    'Firebase': {
+    'firebasetoken': {
         enabled: true,
         resolve: './src/plugins/firebasetoken'
     },
 
-    'mParticle': {
+    'mparticle': {
         enabled: true,
         resolve: './src/plugins/mparticle'
     },
