@@ -1,3 +1,5 @@
+import favicon from './extensions/favicon.png';
+
 const config = {
   locales: [
     // 'ar',
@@ -34,6 +36,10 @@ const bootstrap = (app) => {
 };
 
 export default {
-  config,
+  config: {
+	head: {
+      		favicon: favicon,
+    	},
+  },
   bootstrap,
 };
