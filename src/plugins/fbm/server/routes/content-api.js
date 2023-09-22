@@ -5,6 +5,7 @@ const config = require("@strapi/strapi/lib/core/registries/config");
 module.exports = {
     type: 'content-api',
     routes: [
+        /*
         {
             method: "GET",
             path: "/webhook",
@@ -32,7 +33,7 @@ module.exports = {
                 description: "Send Facebook message"
             }
         },
-
+        */
         {
             method: "POST",
             path: "/homepage",
