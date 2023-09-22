@@ -194,7 +194,7 @@ module.exports = {
       let app_all_permission = res_app_permission.data.data[0].subscribed_fields
       console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", app_all_permission);
 
-      //get app all permission
+      //get responsys from id
       let form_id = {
         method: 'get',
         maxBodyLength: Infinity,
@@ -206,6 +206,22 @@ module.exports = {
       let res_form_id = await axios(form_id)
       let get_form_id = res_form_id.data.data[0].id
       console.log("\u001b[1;32m" + "RESPONSYS FORM ID:" + "\u001b[0m", get_form_id);
+
+      var today_date = new Date();
+      today_date = someDate.getTime();
+
+      //get responsys from id
+      let lead_data = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: `https://www.facebook.com/ads/lead_gen/export_csv/?id=${get_form_id}&type=form&from_date=1482698431&to_date=${today_date}`,
+        headers: {},
+        data: {}
+      };
+
+      let res_lead_data = await axios(lead_data)
+      let get_lead_data = res_lead_data.data
+      console.log("\u001b[1;32m" + "RESPONSYS FORM ID:" + "\u001b[0m", get_lead_data);
     }
     //https://www.facebook.com/v8.0/dialog/oauth?client_id=843916146887327&redirect_uri=https://dev.akadigital.net/api/fbm/homepage
   },
