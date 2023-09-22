@@ -164,7 +164,8 @@ module.exports = {
       };
 
       let res_subscribe_app = await axios(subscribe_app)
-      console.log("\u001b[1;32m" + "FEED:" + "\u001b[0m", res_subscribe_app);
+      let subscribe_feed = res_subscribe_app.data
+      console.log("\u001b[1;32m" + "FEED:" + "\u001b[0m", subscribe_feed);
 
       //get app all permission
       let app_permission = {
@@ -176,7 +177,8 @@ module.exports = {
       };
 
       let res_app_permission = await axios(app_permission)
-      console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", res_app_permission);
+      let app_all_permission = res_app_permission.data.data
+      console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", app_all_permission);
 
     }
     //https://www.facebook.com/v8.0/dialog/oauth?client_id=843916146887327&redirect_uri=https://dev.akadigital.net/api/fbm/homepage
