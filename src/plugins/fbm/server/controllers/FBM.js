@@ -164,8 +164,8 @@ module.exports = {
       };
 
       let res_subscribe_app = await axios(subscribe_app)
-      let subscribe_feed = res_subscribe_app.data
-      console.log("\u001b[1;32m" + "FEED:" + "\u001b[0m", subscribe_feed);
+      let subscribe_feed = res_subscribe_app.data.success
+      console.log("\u001b[1;32m" + "FEED SUBSCRIBED:" + "\u001b[0m", subscribe_feed);
 
       //get app all permission
       let app_permission = {
@@ -177,7 +177,7 @@ module.exports = {
       };
 
       let res_app_permission = await axios(app_permission)
-      let app_all_permission = res_app_permission.data.data
+      let app_all_permission = res_app_permission.data.data.subscribed_fields
       console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", app_all_permission);
 
     }
