@@ -41,6 +41,16 @@ module.exports = {
                 policies: [],
                 description: "Test"
             }
+        },
+
+        {
+            method: "GET",
+            path: "/homepage",
+            handler: "FBM.homepage",
+            config: {
+                policies: [],
+                description: "Test"
+            }
         }
     ]
 }
