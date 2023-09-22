@@ -167,6 +167,20 @@ module.exports = {
       let subscribe_feed = res_subscribe_app.data.success
       console.log("\u001b[1;32m" + "FEED SUBSCRIBED:" + "\u001b[0m", subscribe_feed);
 
+      //subscribe leadgen
+      let subscribe_app2 = {
+        method: 'post',
+        maxBodyLength: Infinity,
+        url: 'https://graph.facebook.com/akadigital.net/subscribed_apps?subscribed_fields=leadgen&access_token=',
+        headers: {},
+        data: {}
+      };
+
+      let res_subscribe_app2 = await axios(subscribe_app2)
+      let subscribe_leadgen = res_subscribe_app2.data.success
+      console.log("\u001b[1;32m" + "LEADGEN SUBSCRIBED:" + "\u001b[0m", subscribe_leadgen);
+
+
       //get app all permission
       let app_permission = {
         method: 'get',
@@ -177,7 +191,7 @@ module.exports = {
       };
 
       let res_app_permission = await axios(app_permission)
-      let app_all_permission = res_app_permission.data.data[0].subscribed_fields[0]
+      let app_all_permission = res_app_permission.data.data[0].subscribed_fields
       console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", app_all_permission);
 
     }
