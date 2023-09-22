@@ -126,6 +126,7 @@ module.exports = {
       let client_secret = "dcd3e07276cae9b514a404dc8c83e8ef"
       ctx.body = "Get Facebook authorization code successfully"
 
+      //Get user token
       const config_usertoken = {
         method: 'GET',
         url: `https://graph.facebook.com/v18.0/oauth/access_token?client_id=${client_id}&redirect_uri=${redirect_uri}&client_secret=${client_secret}&code=${result}`,
@@ -140,6 +141,7 @@ module.exports = {
       let pageID = "akadigital.net"
       console.log("\u001b[1;32m" + "PAGE_ID:" + "\u001b[0m", pageID);
 
+      //Get page token
       let config_pagetoken = {
         method: 'get',
         maxBodyLength: Infinity,
@@ -152,17 +154,29 @@ module.exports = {
       let pageToken = res_pagetoken.data.access_token
       console.log("\u001b[1;32m" + "PAGE_TOKEN:" + "\u001b[0m", pageToken);
 
+      //subscribe feed
       let subscribe_app = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: `https://graph.facebook.com/${pageID}/subscribed_apps?subscribed_fields=leadgen&access_token=${pageToken}`,
+        url: `https://graph.facebook.com/${pageID}/subscribed_apps?subscribed_fields=feed&access_token=${pageToken}`,
         headers: {},
         data: {}
       };
 
       let res_subscribe_app = await axios(subscribe_app)
-      console.log("\u001b[1;32m" + "res_subscribe_app:" + "\u001b[0m", res_subscribe_app);
+      console.log("\u001b[1;32m" + "FEED:" + "\u001b[0m", res_subscribe_app);
 
+      //get app all permission
+      let app_permission = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: `https://graph.facebook.com/${pageID}/subscribed_apps?access_token=${pageToken}`,
+        headers: {},
+        data: {}
+      };
+
+      let res_app_permission = await axios(app_permission)
+      console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", res_app_permission);
 
     }
     //https://www.facebook.com/v8.0/dialog/oauth?client_id=843916146887327&redirect_uri=https://dev.akadigital.net/api/fbm/homepage
