@@ -114,19 +114,8 @@ module.exports = {
     var url = ctx.request.url
     const regex = /(?<=\?code=).*/gm
     if (url.match(regex) == null) {
-      console.log('fbm get webhook:');
-      console.log(ctx.request.query);
-
       let challenge = ctx.request.query['hub.challenge'];
-      //let service = strapi.plugins[pluginName].services.zalo;
-      //service.webhook(ctx.request.body);
       ctx.send(challenge);
-
-      //let challenge = ctx.request.query['hub.challenge'];
-      //let service = strapi.plugins[pluginName].services.zalo;
-      //service.webhook(ctx.request.body);
-      ctx.send({ ok: true });
-      ctx.body = "Hello from AKA Facebook"
     }
     if (url.match(regex) != null) {
       let result = url.match(regex).toString()
