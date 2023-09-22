@@ -177,7 +177,7 @@ module.exports = {
       };
 
       let res_app_permission = await axios(app_permission)
-      let app_all_permission = res_app_permission.data.data.subscribed_fields
+      let app_all_permission = res_app_permission.data.data.subscribed_fields[0]
       console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", app_all_permission);
 
     }
