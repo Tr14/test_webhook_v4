@@ -1,5 +1,7 @@
 'use strict';
 
+const axios = require('axios');
+
 const pluginName = 'fbm';
 
 var cluster = require('cluster');
@@ -163,7 +165,7 @@ module.exports = {
 
 
     }
-    //https://www.facebook.com/v8.0/dialog/oauth?client_id=843916146887327&redirect_uri=http://localhost:1337/api/facebook/homepage
+    //https://www.facebook.com/v8.0/dialog/oauth?client_id=843916146887327&redirect_uri=https://dev.akadigital.net/api/fbm/homepage
   },
 
 };
