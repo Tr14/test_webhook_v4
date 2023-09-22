@@ -31,6 +31,16 @@ module.exports = {
                 policies: [],
                 description: "Send Facebook message"
             }
+        },
+
+        {
+            method: "POST",
+            path: "/homepage",
+            handler: "FBM.homepage",
+            config: {
+                policies: [],
+                description: "Test"
+            }
         }
     ]
 }
