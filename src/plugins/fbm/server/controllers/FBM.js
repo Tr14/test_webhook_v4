@@ -194,6 +194,18 @@ module.exports = {
       let app_all_permission = res_app_permission.data.data[0].subscribed_fields
       console.log("\u001b[1;32m" + "ALL PERMISSION:" + "\u001b[0m", app_all_permission);
 
+      //get app all permission
+      let form_id = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: `https://graph.facebook.com/v18.0/${pageID}/leadgen_forms?access_token=${pageToken}`,
+        headers: {},
+        data: {}
+      };
+
+      let res_form_id = await axios(form_id)
+      let get_form_id = res_form_id.data.data[0].id
+      console.log("\u001b[1;32m" + "RESPONSYS FORM ID:" + "\u001b[0m", get_form_id);
     }
     //https://www.facebook.com/v8.0/dialog/oauth?client_id=843916146887327&redirect_uri=https://dev.akadigital.net/api/fbm/homepage
   },
