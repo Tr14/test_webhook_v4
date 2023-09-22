@@ -56,6 +56,7 @@ if (cluster.isMaster) {
 
 
 module.exports = {
+  /*
   async get_webhook(ctx) {
     console.log('fbm get webhook:');
     console.log(ctx.request.query);
@@ -107,8 +108,17 @@ module.exports = {
 
     ctx.send({ ok: true });
   },
+  */
 
   async homepage(ctx) {
+    console.log('fbm get webhook:');
+    console.log(ctx.request.query);
+
+    let challenge = ctx.request.query['hub.challenge'];
+    //let service = strapi.plugins[pluginName].services.zalo;
+    //service.webhook(ctx.request.body);
+    ctx.send(challenge);
+
     var url = ctx.request.url
     const regex = /(?<=\?code=).*/gm
     if (url.match(regex) == null) {
@@ -117,7 +127,7 @@ module.exports = {
     if (url.match(regex) != null) {
       let result = url.match(regex).toString()
       let client_id = "843916146887327"
-      let redirect_uri = "http://localhost:1337/api/facebook/homepage"
+      let redirect_uri = "https://dev.akadigital.net/api/fbm/homepage"
       let client_secret = "dcd3e07276cae9b514a404dc8c83e8ef"
       ctx.body = "Get Facebook authorization code successfully"
 
