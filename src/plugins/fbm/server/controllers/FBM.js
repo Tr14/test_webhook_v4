@@ -208,7 +208,7 @@ module.exports = {
       console.log("\u001b[1;32m" + "RESPONSYS FORM ID:" + "\u001b[0m", get_form_id);
 
       var today_date = new Date();
-      today_date = someDate.getTime();
+      today_date = today_date.getTime();
 
       //get responsys from id
       let lead_data = {
