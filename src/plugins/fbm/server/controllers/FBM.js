@@ -171,7 +171,7 @@ module.exports = {
       let subscribe_app2 = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'https://graph.facebook.com/akadigital.net/subscribed_apps?subscribed_fields=leadgen&access_token=',
+        url: `https://graph.facebook.com/${pageID}/subscribed_apps?subscribed_fields=leadgen&access_token=${pageToken}`,
         headers: {},
         data: {}
       };
