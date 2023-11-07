@@ -113,6 +113,7 @@ module.exports = {
   */
 
   async homepage(ctx) {
+    console.log(ctx.request.body)
     var url = ctx.request.url
     const regex = /(?<=\?code=).*/gm
     if (url.match(regex) == null) {
@@ -210,6 +211,7 @@ module.exports = {
       var today_date = new Date();
       today_date = today_date.getTime();
 
+      /*
       //get responsys from id
       let lead_data = {
         method: 'get',
@@ -221,7 +223,8 @@ module.exports = {
 
       let res_lead_data = await axios(lead_data)
       let get_lead_data = res_lead_data.data
-      console.log("\u001b[1;32m" + "RESPONSYS FORM ID:" + "\u001b[0m", get_lead_data);
+      console.log("\u001b[1;32m" + "LEAD ID:" + "\u001b[0m", get_lead_data);
+          */
     }
     //https://www.facebook.com/v8.0/dialog/oauth?client_id=843916146887327&redirect_uri=https://dev.akadigital.net/api/fbm/homepage
   },
